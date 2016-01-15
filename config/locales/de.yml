@@ -1,0 +1,5 @@
+de:
+  # TODO Should we break this out
+  omniauth:
+    # TODO Punctuation?
+    invalid_credentials: "Der Benutzername oder das Passwort ist falsch"
