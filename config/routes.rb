@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  # TODO Fix a proper root
+  root to: 'sessions#new'
+
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  #get '/auth/failure', to: 'sessions#failure'
+  # TODO Use resourceful routing for new and delete?
+  get '/login', to: 'sessions#new', as: 'login'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
