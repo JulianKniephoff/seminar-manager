@@ -1,5 +1,12 @@
 <h1>Login</h1>
 
+<%# TODO Is this idiomatic? %>
+<% if @message %>
+  <p>
+    <%= @message %>
+  </p>
+<% end %>
+
 <%= form_tag '/auth/identity/callback' do %>
   <%= label_tag :auth_key, 'E-Mail' %>
   <%= text_field_tag :auth_key, params[:auth_key] %> <%# TODO This should not be necessary %>
