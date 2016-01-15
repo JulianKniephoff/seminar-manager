@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # TODO Fix a proper root
-  root to: 'sessions#new'
+  root to: 'static_pages#home'
 
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   #get '/auth/failure', to: 'sessions#failure'
