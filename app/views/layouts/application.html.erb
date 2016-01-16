@@ -14,5 +14,11 @@
 
 <%= yield %>
 
+<% if signed_in? %>
+  <%= link_to 'Abmelden', logout_path, method: :delete %>
+<% else %>
+  <%= link_to 'Anmelden', login_path %>
+<% end %>
+
 </body>
 </html>
