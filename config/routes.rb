@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
 
+  resources :ideas
+
   # Authentication
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   #get '/auth/failure', to: 'sessions#failure'
