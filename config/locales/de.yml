@@ -1,5 +1,8 @@
 de:
   # TODO Should we break this out
-  omniauth:
+  omniauth: # TODO Call this authentication?
     # TODO Punctuation?
     invalid_credentials: "Der Benutzername oder das Passwort ist falsch"
+  unauthorized:
+    create:
+      idea: 'Sie müssen angemeldet sein, um neue Ideen anzulegen.'
