@@ -45,21 +45,20 @@ class SessionsController < ApplicationController
   end
 
   private
+    def auth_hash
+      env['omniauth.auth']
+    end
 
-  def auth_hash
-    env['omniauth.auth']
-  end
+    # TODO Should we pack information about the auth_hash in here?
+    # TODO Maybe we should not call this hash.
+    # We can also access its values using accessors
+    # plus its hashness is an implementation detail
+    def provider
+      # TODO Maybe we should translate :identity to something like "<seminar-manager>-Konto"
+      auth_hash[:provider].humanize
+    end
 
-  # TODO Should we pack information about the auth_hash in here?
-  # TODO Maybe we should not call this hash.
-  # We can also access its values using accessors
-  # plus its hashness is an implementation detail
-  def provider
-    # TODO Maybe we should translate :identity to something like "<seminar-manager>-Konto"
-    auth_hash[:provider].humanize
-  end
-
-  def name
-    auth_hash['info']['name']
-  end
+    def name
+      auth_hash['info']['name']
+    end
 end
