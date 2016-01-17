@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   # POST /idea/1/comments
   def create
     if @comment.save
-      redirect_to @idea, notice: 'Comment was successfully created.'
+      redirect_to @idea, notice: 'Ihr Kommentar wurde erfolgreich hinzugefügt.'
     else
       render :new
     end
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1.json
   def update
     if @comment.update(comment_params)
-      redirect_to @comment, notice: 'Comment was successfully updated.'
+      redirect_to @comment, notice: 'Ihr Kommentar wurde erfolgreich aktualisiert.'
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment.destroy
-    redirect_to comments_url, notice: 'Comment was successfully destroyed.'
+    redirect_to comments_url, notice: 'Ihr Kommentar wurde erfolgreich gelöscht.'
   end
 
   private
