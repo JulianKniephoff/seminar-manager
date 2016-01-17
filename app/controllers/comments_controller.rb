@@ -3,14 +3,6 @@ class CommentsController < ApplicationController
   load_resource :idea
   load_resource :comment, through: :idea, shallow: true
 
-  # GET /idea/1/comments
-  def index
-  end
-
-  # GET /comments/1
-  def show
-  end
-
   # GET /idea/1/comments/new
   def new
   end
