@@ -2,8 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new # guest user (not logged in)
+    if user.present?
+      can :create, Idea
 
+      can [:update, :destroy], Idea, author_id: user.id
+    end
     can :read, :all
   end
 end
