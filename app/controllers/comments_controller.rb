@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   # TODO The fact that this belongs to cancan is wrong
   load_resource :idea
-  load_resource :comment, through: :idea, shallow: true
+  load_and_authorize_resource :comment, through: :idea, shallow: true
 
   # GET /idea/1/comments/new
   def new
