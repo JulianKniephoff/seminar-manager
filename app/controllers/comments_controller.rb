@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   # POST /idea/1/comments
   def create
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to @idea, notice: 'Comment was successfully created.'
     else
       render :new
     end
