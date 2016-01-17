@@ -19,6 +19,7 @@ class IdeasController < ApplicationController
 
   # POST /ideas
   def create
+    @idea.author = current_user
     if @idea.save
       redirect_to @idea, notice: 'Ihre Idee wurde erfolgreich erstellt.'
     else
