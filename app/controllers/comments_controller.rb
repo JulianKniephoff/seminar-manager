@@ -13,6 +13,9 @@ class CommentsController < ApplicationController
 
   # POST /idea/1/comments
   def create
+    # TODO Can we do this nicer?
+    # TODO Do we need this in `new` as well?
+    @comment.author = current_user
     if @comment.save
       redirect_to @idea, notice: 'Ihr Kommentar wurde erfolgreich hinzugefügt.'
     else
