@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116212441) do
+ActiveRecord::Schema.define(version: 20160117091325) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "provider"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20160116212441) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "author_id"
   end
+
+  add_index "ideas", ["author_id"], name: "index_ideas_on_author_id"
 
   create_table "identities", force: :cascade do |t|
     t.string   "email"
