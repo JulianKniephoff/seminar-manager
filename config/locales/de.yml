@@ -6,3 +6,7 @@ de:
   unauthorized:
     create:
       idea: 'Sie müssen angemeldet sein, um neue Ideen anzulegen.'
+    edit:
+      idea: 'Sie dürfen nur Ihre eigenen Ideen bearbeiten.'
+    delete:
+      idea: 'Sie dürfen nur Ihre eigenen Ideen löschen.'
