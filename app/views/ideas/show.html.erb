@@ -10,5 +10,17 @@
   <%= @idea.description %>
 </p>
 
+<table>
+  <% @idea.comments.each do |comment| %>
+    <tr>
+      <td><%= comment.author.name %></td>
+      <td><%= comment.content %></td>
+      <td><%= link_to 'Bearbeiten', edit_comment_path(comment) %></td>
+      <td><%= link_to 'Löschen', comment, method: :delete, data: { confirm: 'Sind Sie sicher?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Kommentar hinzufügen', new_idea_comment_path(@idea) %>
+
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
