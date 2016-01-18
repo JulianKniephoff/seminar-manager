@@ -1,0 +1,26 @@
+<header>
+  <div class="site-frame">
+    <div class="header-top">
+      <div class="header-title">
+        Neue Konzepte der Informatik
+      </div>
+      <div class="header-user">
+        <% if signed_in? %>
+          <%= link_to 'Abmelden', logout_path, method: :delete %>
+        <% else %>
+          <!-- <%= link_to 'Anmelden', login_path %> # -->
+          <!-- <button>Login</button> -->
+          <%= button_to "Login", login_path, class: "header-login-button" %>
+        <% end %>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><%= link_to "Start", root_path, class: "active" %></li>
+        <li><a href="#">Aktuell (SS16)</a></li>
+        <li><%= link_to "Themen", ideas_path %></li>
+        <li><a href="#">Archiv</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
