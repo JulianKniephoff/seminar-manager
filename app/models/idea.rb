@@ -4,4 +4,9 @@ class Idea < ActiveRecord::Base
   has_many :likes, inverse_of: :idea
 
   validates :title, uniqueness: true
+
+  def like(user)
+    likes.create(user: user)
+    save
+  end
 end
