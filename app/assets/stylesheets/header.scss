@@ -3,144 +3,144 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,700,400italic,900,700italic,900italic&subset=latin,latin-ext);
 
 html, body {
-	margin: 0;
-	font-family: "Raleway";
-	font-weight: normal;
-	background-color: #fafaff;
+  margin: 0;
+  font-family: "Raleway";
+  font-weight: normal;
+  background-color: #fafaff;
 }
 
 body > header {
-	background-color: #3282CA;
-	color: white;
+  background-color: #3282CA;
+  color: white;
 }
 
 .site-frame {
-	max-width: 850px;
-	min-width: 650px;
-	width: 75%;
-	margin: 0 auto;
-	position: relative;
-	padding-top: 10px;
+  max-width: 850px;
+  min-width: 650px;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 10px;
 }
 
 .header-top {
-	text-align: right;
-	height: 50px;
+  text-align: right;
+  height: 50px;
 }
 
 .header-title {
-	position: absolute;
-	left: 0;
-	font-size: 20pt;
-	font-weight: 700;
+  position: absolute;
+  left: 0;
+  font-size: 20pt;
+  font-weight: 700;
 }
 
 .header-login-button {
-	background: none;
-	border: 1px solid #ccf;
-	color: white;
-	/*padding: 5px 14px;*/
-	width:80px;
-	height: 30px;
-	font-size: 11pt;
-	cursor: pointer;
-	transition: box-shadow 0.2s, border-color 0.2s;
+  background: none;
+  border: 1px solid #ccf;
+  color: white;
+  /*padding: 5px 14px;*/
+  width:80px;
+  height: 30px;
+  font-size: 11pt;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .header-login-button:hover {
-	/*background-color: #ccf;*/
-	box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
-	border-color: white;
-	/*color: black;*/
-	/*font-weight: bold;*/
-	/*font-style: italic;*/
+  /*background-color: #ccf;*/
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+  border-color: white;
+  /*color: black;*/
+  /*font-weight: bold;*/
+  /*font-style: italic;*/
 }
 
 nav {
-	text-align: right;
-	font-size: 0;
-	margin-top: 5px;
+  text-align: right;
+  font-size: 0;
+  margin-top: 5px;
 }
 
 nav li {
-	font-size: 14pt;
-	display: inline-block;
+  font-size: 14pt;
+  display: inline-block;
 }
 
 nav li a {
-	padding: 8px 15px;
-	color: white;
-	text-decoration: none;
-	display: block;
-	margin: 0;
+  padding: 8px 15px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 0;
 }
 nav li a.active {
-	/*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
-	/*border-bottom: 2px solid white;*/
-	/*padding-bottom: 6px;*/
-	background-color: rgba(0,0,0, 0.4);
-	font-weight: 600;
-	/*background: rgba(0, 0, 0, 0.15);*/
-	/*background: rgba(255, 200, 255, 0.5);*/
-	/*background: rgba(255, 255, 255, 0.1);*/
-	/*color: black;*/
+  /*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
+  /*border-bottom: 2px solid white;*/
+  /*padding-bottom: 6px;*/
+  background-color: rgba(0,0,0, 0.4);
+  font-weight: 600;
+  /*background: rgba(0, 0, 0, 0.15);*/
+  /*background: rgba(255, 200, 255, 0.5);*/
+  /*background: rgba(255, 255, 255, 0.1);*/
+  /*color: black;*/
 }
 
 nav li a:hover {
-	background-color: rgba(0,0,0, 0.2);
-	/*border-bottom: 2px solid rgba(255, 255, 255, 0.7);*/
-	/*padding-bottom: 6px;*/
+  background-color: rgba(0,0,0, 0.2);
+  /*border-bottom: 2px solid rgba(255, 255, 255, 0.7);*/
+  /*padding-bottom: 6px;*/
 }
 
 main {
-	/*background-color: #eee;*/
-	padding-top: 30px;
+  /*background-color: #eee;*/
+  padding-top: 30px;
 }
 
 .text-body {
-	margin: 3px 10px;
-	font-size: 17px;
-	font-family: "Merriweather";
-	font-weight: 300;
-	line-height: 28px;
+  margin: 3px 10px;
+  font-size: 17px;
+  font-family: "Merriweather";
+  font-weight: 300;
+  line-height: 28px;
 }
 
 .welcome-text {
-	margin: 5px 10%;
-	font-size: 17px;
-	font-family: "Merriweather";
-	font-weight: 300;
-	line-height: 28px;
+  margin: 5px 10%;
+  font-size: 17px;
+  font-family: "Merriweather";
+  font-weight: 300;
+  line-height: 28px;
 }
 
 .welcome-actions {
-	text-align: center;
-	margin: 20px 0px;
+  text-align: center;
+  margin: 20px 0px;
 }
 
 .welcome-actions button {
-	background-color: #3282CA;
-	color: white;
-	border: 2px solid #3F4A81;
-	border-radius: 24px;
-	height: 47px;
-	width: 270px;
-	font-size: 14pt;
-	cursor: pointer;
-	margin: 0px 10px;
+  background-color: #3282CA;
+  color: white;
+  border: 2px solid #3F4A81;
+  border-radius: 24px;
+  height: 47px;
+  width: 270px;
+  font-size: 14pt;
+  cursor: pointer;
+  margin: 0px 10px;
 }
 
 .welcome-actions button:hover {
-	background: none;
-	color: black;
-	border: 2px dashed #3282CA;
+  background: none;
+  color: black;
+  border: 2px dashed #3282CA;
 }
 
 .welcome-actions button:focus {
-	outline:0;
-	background-color: #2262BA;
+  outline:0;
+  background-color: #2262BA;
 }
 
 .welcome-desc {
-	margin-top: 50px;
+  margin-top: 50px;
 }
