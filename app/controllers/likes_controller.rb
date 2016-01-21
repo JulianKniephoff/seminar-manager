@@ -24,6 +24,7 @@ class LikesController < ApplicationController
   def destroy
     # TODO De we even want likes to be destroyable?
     authorize like, :destroy
+    idea = like.idea # TODO Ugly
     like.destroy
     # TODO Redirect to where we came from
     redirect_to idea, notice: 'Ihre Stimme wurde erfolgeich gelöscht.'
@@ -41,6 +42,10 @@ class LikesController < ApplicationController
     end
 
     def like
-      @like ||= idea.like(current_user)
+      @like ||= if params[:idea_id]
+                  idea.like(current_user)
+                else
+                  Like.find(params[:id])
+                end
     end
 end

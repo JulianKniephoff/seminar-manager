@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :ideas do
     resources :comments, shallow: true
-    resources :likes, only: [:index, :create, :destroy]
+    resources :likes, only: [:index, :create, :destroy], shallow: true
   end
 
   # Authentication
