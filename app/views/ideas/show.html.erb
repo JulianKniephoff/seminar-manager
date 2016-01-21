@@ -10,6 +10,14 @@
   <%= @idea.description %>
 </p>
 
+<% if current_user.likes?(@idea) %>
+  <%# TODO Is there a cleaner way to get the like? %>
+  <%= button_to '-1', current_user.like(@idea), method: :delete %>
+<% else %>
+  <%= button_to '+1', idea_likes_path(@idea) %>
+<% end %>
+<%= @idea.likes.count %>
+
 <table>
   <% @idea.comments.each do |comment| %>
     <tr>
