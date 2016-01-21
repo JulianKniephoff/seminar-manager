@@ -8,6 +8,9 @@ class Ability
 
       can :create, Comment
       can [:update, :destroy], Comment, author_id: user.id
+
+      can :create, Like
+      can :destroy, Like, user_id: user.id
     end
     can :read, :all
   end
