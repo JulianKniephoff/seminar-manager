@@ -7,18 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render 'layouts/header' %>
 
-<% flash.each do |type, message| %>
-  <%= content_tag :div, message, class: "flash flash-#{type}"%>
-<% end %>
+<main>
+  <div class="site-frame">
+    <% flash.each do |type, message| %>
+      <%= content_tag :div, message, class: "flash flash-#{type}"%>
+    <% end %>
 
-<%= yield %>
-
-<% if signed_in? %>
-  <%= link_to 'Abmelden', logout_path, method: :delete %>
-<% else %>
-  <%= link_to 'Anmelden', login_path %>
-<% end %>
+    <%= yield %>
+  </div>
+<main>
 
 </body>
 </html>
