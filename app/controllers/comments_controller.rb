@@ -24,7 +24,6 @@ class CommentsController < ApplicationController
   end
 
   # PATCH/PUT /comments/1
-  # PATCH/PUT /comments/1.json
   def update
     if @comment.update(comment_params)
       redirect_to @comment, notice: 'Ihr Kommentar wurde erfolgreich aktualisiert.'
@@ -34,7 +33,6 @@ class CommentsController < ApplicationController
   end
 
   # DELETE /comments/1
-  # DELETE /comments/1.json
   def destroy
     @comment.destroy
     redirect_to comments_url, notice: 'Ihr Kommentar wurde erfolgreich gelöscht.'
