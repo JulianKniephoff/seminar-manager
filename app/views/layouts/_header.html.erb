@@ -8,15 +8,15 @@
         <% if signed_in? %>
           <%= link_to 'Abmelden', logout_path, method: :delete %>
         <% else %>
-          <%= button_to "Login", login_path, class: "header-login-button", method: :get %>
+          <%= button_to 'Login', login_path, class: 'header-login-button', method: :get %>
         <% end %>
       </div>
     </div>
     <nav>
       <ul>
-        <li><%= link_to "Start", root_path, class: "active" %></li>
+        <li><%= link_to 'Start', root_path, class: 'active' %></li>
         <li><a href="#">Aktuell (SS16)</a></li>
-        <li><%= link_to "Themen", ideas_path %></li>
+        <li><%= link_to 'Themen', ideas_path %></li>
         <li><a href="#">Archiv</a></li>
       </ul>
     </nav>
