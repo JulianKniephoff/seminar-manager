@@ -7,6 +7,5 @@ class Idea < ActiveRecord::Base
 
   def like(user)
     likes.create(user: user)
-    save
   end
 end
