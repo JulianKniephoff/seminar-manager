@@ -10,7 +10,7 @@ class LikesController < ApplicationController
   def create
     # TODO Do we actually need a notice here?
     # TODO Mixing computation and IO again ...
-    authorize like, :create
+    authorize! :create, like
     notice = if like.save
                'Ihre Stimme wurde erfolgreich gespeichert.'
              else
@@ -23,7 +23,7 @@ class LikesController < ApplicationController
   # DELETE /likes/1
   def destroy
     # TODO De we even want likes to be destroyable?
-    authorize like, :destroy
+    authorize! :destroy, like
     idea = like.idea # TODO Ugly
     like.destroy
     # TODO Redirect to where we came from
