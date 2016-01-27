@@ -26,7 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Authentication
 gem 'omniauth'
 gem 'omniauth-identity'
-gem 'omniauth-ldap'
+# TODO See intridea/omniauth-ldap#65
+gem 'net-ldap', '~> 0.3.1'
+gem 'omniauth-ldap', github: 'JulianKniephoff/omniauth-ldap', branch: 'dynamic-bind'
 
 # Authorization
 gem 'cancancan', '~> 1.10'

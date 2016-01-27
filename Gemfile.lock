@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/JulianKniephoff/omniauth-ldap.git
+  revision: a35534bb68d8277bc0392a7eb96e594e29f42b79
+  branch: dynamic-bind
+  specs:
+    omniauth-ldap (1.0.4)
+      net-ldap (~> 0.3)
+      omniauth (~> 1.0)
+      pyu-ruby-sasl (~> 0.0.3.1)
+      rubyntlm (~> 0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,11 +95,6 @@ GEM
     omniauth-identity (1.1.1)
       bcrypt-ruby (~> 3.0)
       omniauth (~> 1.0)
-    omniauth-ldap (1.0.4)
-      net-ldap (~> 0.3.1)
-      omniauth (~> 1.0)
-      pyu-ruby-sasl (~> 0.0.3.1)
-      rubyntlm (~> 0.1.1)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -119,7 +125,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
-    rubyntlm (0.1.1)
+    rubyntlm (0.5.3)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -163,9 +169,10 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  net-ldap (~> 0.3.1)
   omniauth
   omniauth-identity
-  omniauth-ldap
+  omniauth-ldap!
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
