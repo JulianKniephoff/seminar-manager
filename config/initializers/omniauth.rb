@@ -1,5 +1,13 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :identity
+  provider :ldap,
+           host: 'ldap.uni-osnabrueck.de',
+           port: 389,
+           base: 'ou=people, dc=uni-osnabrueck, dc=de',
+           uid: 'uid',
+           method: :tls,
+           bind_dn: '%{uid}=%{username}, %{base}',
+           password: '%{password}'
 
   on_failure do |env|
     # TODO This does not belong here, logically
