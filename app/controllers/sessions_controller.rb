@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  # TODO What are the security implications of this?
+  # See https://github.com/intridea/omniauth/wiki/Managing-Multiple-Providers/2174dce6c804f7c25b407859dacd75a9c0fe8ac8
+  # near the end
+  skip_before_filter :verify_authenticity_token, only: [:create, :failure]
+
   def new
   end
 
