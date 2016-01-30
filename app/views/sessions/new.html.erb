@@ -7,9 +7,9 @@
   </p>
 <% end %>
 
-<%= form_tag '/auth/identity/callback' do %>
-  <%= label_tag :auth_key, 'E-Mail' %>
-  <%= text_field_tag :auth_key, params[:auth_key] %> <%# TODO This should not be necessary %>
+<%= form_tag '/auth/ldap/callback' do %>
+  <%= label_tag :username, 'E-Mail' %>
+  <%= text_field_tag :username, params[:username] %> <%# TODO This should not be necessary %>
   <%= label_tag :password, 'Passwort' %>
   <%= password_field_tag :password %>
   <%= submit_tag 'Anmelden' %>
