@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 20160120190613) do
   add_index "ideas", ["author_id"], name: "index_ideas_on_author_id"
 
   create_table "identities", force: :cascade do |t|
+    t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "name"
   end
 
   create_table "likes", force: :cascade do |t|
