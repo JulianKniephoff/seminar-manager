@@ -8,7 +8,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            uid: 'uid',
            method: :tls,
            bind_dn: '%{uid}=%{username}, %{base}',
-           password: '%{password}'
+           password: '%{password}',
+           name_proc: ->(name) { name.gsub(/@.*$/, '') }
 
   on_failure do |env|
     # TODO This does not belong here, logically
