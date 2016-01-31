@@ -22,7 +22,6 @@ class LikesController < ApplicationController
 
   # DELETE /likes/1
   def destroy
-    # TODO De we even want likes to be destroyable?
     authorize! :destroy, like
     idea = like.idea # TODO Ugly
     like.destroy
