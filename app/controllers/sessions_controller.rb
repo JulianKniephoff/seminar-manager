@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       if authentication.user == current_user
         "Dieses #{provider}-Konto ist bereits mit Ihrem Konto verknüpft."
       else # TODO We possibly steal a link to another account here
-        identity.update(user: current_user)
+        authentication.update(user: current_user)
         "Sie können sich von nun an mit diesem #{provider}-Konto anmelden."
       end
     else # TODO This could be shorter
