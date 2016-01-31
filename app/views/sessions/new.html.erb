@@ -14,3 +14,14 @@
   <%= password_field_tag :password %>
   <%= submit_tag 'Anmelden' %>
 <% end %>
+
+<% if Rails.env.development? %>
+  <h2>Entwickler-Anmeldung</h2>
+  <%= form_tag '/auth/developer/callback' do %>
+    <%= label_tag :name, 'Name' %>
+    <%= text_field_tag :username %>
+    <%= label_tag :email, 'E-Mail' %>
+    <%= password_field_tag :email %>
+    <%= submit_tag 'Anmelden' %>
+  <% end %>
+<% end %>
