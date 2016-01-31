@@ -18,3 +18,6 @@
 
 # Ignore vendored bundles
 /vendor/bundle
+
+# Misc
+.byebug_history
