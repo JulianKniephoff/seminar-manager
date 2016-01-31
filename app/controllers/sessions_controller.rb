@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
         "Dieses #{provider}-Konto ist bereits mit Ihrem Konto verknüpft."
       else # TODO We possibly steal a link to another account here
         authentication.update(user: current_user)
+        # TODO Should we note that we might have stolen the authentication from another account?
         "Sie können sich von nun an mit diesem #{provider}-Konto anmelden."
       end
     else # TODO This could be shorter
