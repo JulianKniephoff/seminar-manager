@@ -1,5 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :identity
   provider :developer
   provider :ldap,
            host: 'ldap.uni-osnabrueck.de',
