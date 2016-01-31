@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
       if authentication.user.present?
         'Sie wurden erfolgreich angemeldet.'
       else
-        authentication.create_user(name: name)
+        authentication.create_user(name: name, email: email)
         authentication.save
         'Es wurde ein neues Konto für Sie angelegt.'
       end
@@ -64,7 +64,15 @@ class SessionsController < ApplicationController
       auth_hash[:provider].humanize
     end
 
+    def info
+      auth_hash['info']
+    end
+
     def name
-      auth_hash['info']['name']
+      info['name']
+    end
+
+    def email
+      info['email']
     end
 end
