@@ -64,6 +64,9 @@ class SessionsController < ApplicationController
       auth_hash[:provider].humanize
     end
 
+    # TODO Do we really want these methods?
+    # Maybe they could accept some parameters
+    # instead of returning stuff out of nowhere
     def info
       auth_hash['info']
     end
