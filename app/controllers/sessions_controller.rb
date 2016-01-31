@@ -61,7 +61,6 @@ class SessionsController < ApplicationController
     # We can also access its values using accessors
     # plus its hashness is an implementation detail
     def provider
-      # TODO Maybe we should translate :identity to something like "<seminar-manager>-Konto"
       auth_hash[:provider].humanize
     end
 
