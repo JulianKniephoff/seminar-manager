@@ -1,5 +1,5 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :developer
+  provider :developer if Rails.env.development?
   provider :ldap,
            host: 'ldap.uni-osnabrueck.de',
            port: 389,
