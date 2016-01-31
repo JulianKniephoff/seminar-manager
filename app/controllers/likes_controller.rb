@@ -34,7 +34,7 @@ class LikesController < ApplicationController
 
     # TODO DRY up the memoization?
     def idea
-        @idea ||= Idea.find(params[:idea_id])
+      @idea ||= Idea.find(params[:idea_id])
     end
 
     def likes
