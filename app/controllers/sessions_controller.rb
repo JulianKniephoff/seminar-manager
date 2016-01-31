@@ -9,33 +9,27 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # TODO Should we pack information about the auth_hash in here?
+    # TODO Maybe we should not call this hash.
+    # We can also access its values using accessors
+    # plus its hashness is an implementation detail
+    auth_hash = env['omniauth.auth']
+    provider = auth_hash[:provider]
+
     authentication = Authentication.find_or_create_with_auth_hash(auth_hash)
 
-    # TODO Do these notices make sense in context?
-    # TODO This mixes computation with IO
-    notice = if signed_in?
-      if authentication.user == current_user
-        "Dieses #{provider}-Konto ist bereits mit Ihrem Konto verknüpft."
-      else # TODO We possibly steal a link to another account here
-        authentication.update(user: current_user)
-        # TODO Should we note that we might have stolen the authentication from another account?
-        "Sie können sich von nun an mit diesem #{provider}-Konto anmelden."
-      end
-    else # TODO This could be shorter
-      if authentication.user.present?
-        'Sie wurden erfolgreich angemeldet.'
-      else
-        authentication.create_user(name: name, email: email)
-        authentication.save
-        'Es wurde ein neues Konto für Sie angelegt.'
-      end
+    if authentication.user.blank?
+      info = auth_hash[:info]
+      authentication.create_user(name: info[:name], email: info[:email])
+      authentication.save  # TODO Can we make it so that this is not needed?
     end
 
-    # TODO This is actually only necessary, when we are not signed_in?
     self.current_user = authentication.user
 
+    # TODO What if we were already logged in?
+
     # TODO Redirect to where we came from
-    redirect_to root_path, notice: notice
+    redirect_to root_path, notice: 'Sie haben sich erfolgreich angemeldet.'
   end
 
   def destroy
@@ -50,32 +44,4 @@ class SessionsController < ApplicationController
     @message = t(env['omniauth.error.type'], scope: :omniauth)
     render :new
   end
-
-  private
-    def auth_hash
-      env['omniauth.auth']
-    end
-
-    # TODO Should we pack information about the auth_hash in here?
-    # TODO Maybe we should not call this hash.
-    # We can also access its values using accessors
-    # plus its hashness is an implementation detail
-    def provider
-      auth_hash[:provider].humanize
-    end
-
-    # TODO Do we really want these methods?
-    # Maybe they could accept some parameters
-    # instead of returning stuff out of nowhere
-    def info
-      auth_hash['info']
-    end
-
-    def name
-      info['name']
-    end
-
-    def email
-      info['email']
-    end
 end
