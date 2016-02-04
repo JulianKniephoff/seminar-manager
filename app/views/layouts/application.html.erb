@@ -11,9 +11,11 @@
 
 <main>
   <div class="site-frame">
-    <% flash.each do |type, message| %>
-      <%= content_tag :div, message, class: "flash flash-#{type}"%>
-    <% end %>
+    <section id="flashes-container">
+      <% flash.each do |type, message| %>
+        <%= content_tag :div, message, class: "flash flash-#{type}"%>
+      <% end %>
+    </section>
 
     <%= yield %>
   </div>
