@@ -1,3 +1,26 @@
 // Place all the styles related to the ideas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.new-topic {
+    float: right;
+    margin-top: -40px;
+    border: 2px solid #0a0;
+    border-radius: 10px;
+    font-size: 12pt;
+    background-color: white;
+    padding: 4px 10px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0px 2px 5px #ccc;
+}
+
+.new-topic:hover {
+    background-color: #afa;
+}
+
+.new-topic:active {
+    margin-top: -39px;
+    box-shadow: 0px 1px 5px #ccc;
+}

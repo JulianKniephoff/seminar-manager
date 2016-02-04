@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Ideas</h1>
+<h1>Themen</h1>
 
+<%= link_to 'Thema hinzufügen', new_idea_path, class: 'new-topic'%>
 <table>
   <thead>
     <tr>
@@ -25,5 +26,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Idea', new_idea_path %>
