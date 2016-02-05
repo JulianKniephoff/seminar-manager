@@ -2,24 +2,24 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @idea.title %>
+  <%= @topic.title %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @idea.description %>
+  <%= @topic.description %>
 </p>
 
-<% if current_user.likes?(@idea) %>
+<% if current_user.likes?(@topic) %>
   <%# TODO Is there a cleaner way to get the like? %>
-  <%= button_to '-1', current_user.like(@idea), method: :delete %>
+  <%= button_to '-1', current_user.like(@topic), method: :delete %>
 <% else %>
-  <%= button_to '+1', idea_likes_path(@idea) %>
+  <%= button_to '+1', topic_likes_path(@topic) %>
 <% end %>
-<%= @idea.likes.count %>
+<%= @topic.likes.count %>
 
 <table>
-  <% @idea.comments.each do |comment| %>
+  <% @topic.comments.each do |comment| %>
     <tr>
       <td><%= comment.author.name %></td>
       <td><%= comment.content %></td>
@@ -28,7 +28,7 @@
     </tr>
   <% end %>
 </table>
-<%= link_to 'Kommentar hinzufügen', new_idea_comment_path(@idea) %>
+<%= link_to 'Kommentar hinzufügen', new_topic_comment_path(@topic) %>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

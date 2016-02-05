@@ -1,15 +1,15 @@
 class User < ActiveRecord::Base
   has_many :likes
 
-  # TODO Should this live here or in Idea?
-  # TODO Also the naming is confusing, considering Idea#like ...
-  def like(idea)
-    likes.where(idea: idea).first
+  # TODO Should this live here or in Topic?
+  # TODO Also the naming is confusing, considering Topic#like ...
+  def like(topic)
+    likes.where(topic: topic).first
   end
 
   # TODO Redundant?
-  def likes?(idea)
+  def likes?(topic)
     # TODO Does not work
-    likes.map(&:idea_id).include?(idea.id)
+    likes.map(&:topic_id).include?(topic.id)
   end
 end

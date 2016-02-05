@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Themen</h1>
+
+<%= link_to 'Thema hinzufügen', new_topic_path, class: 'new-topic'%>
+<br style="clear: right" />
+<table class="topic-table">
+  <tbody>
+    <% @topics.each do |topic| %>
+      <tr id="topic-title-<%= topic.id %>" class="topic-title">
+        <td><%= topic.likes.count %></td>
+        <td><%= topic.comments.count %></td>
+        <td><%= topic.title %></td>
+        <td><%= link_to "\u00a0", topic %></td>
+      </tr>
+      <tr id="topic-detail-<%= topic.id %>" class="topic-detail">
+        <td colspan="4">
+          <div>
+            <div class="topic-detail-desc">
+              <%= topic.description %>
+            </div>
+            <%= link_to 'Details >>', topic %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
