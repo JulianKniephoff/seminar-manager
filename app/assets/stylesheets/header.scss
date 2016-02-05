@@ -2,9 +2,11 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700,100,200,600,500,800,900);
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,700,400italic,900,700italic,900italic&subset=latin,latin-ext);
 
+@import 'globals.scss';
+
 html, body {
   margin: 0;
-  font-family: "Raleway";
+  font-family: $sans-font;
   font-weight: normal;
   background-color: #fafaff;
 }
@@ -94,13 +96,13 @@ nav li a:hover {
 
 main {
   /*background-color: #eee;*/
-  padding-top: 30px;
+  // padding-top: 30px;
 }
 
 .text-body {
   margin: 3px 10px;
   font-size: 17px;
-  font-family: "Merriweather";
+  font-family: $serif-font;
   font-weight: 300;
   line-height: 28px;
 }
@@ -108,7 +110,7 @@ main {
 .welcome-text {
   margin: 5px 10%;
   font-size: 17px;
-  font-family: "Merriweather";
+  font-family: $serif-font;
   font-weight: 300;
   line-height: 28px;
 }

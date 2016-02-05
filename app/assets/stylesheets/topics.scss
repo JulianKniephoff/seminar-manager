@@ -1,3 +1,115 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'globals.scss';
+
+$table-color: #CBE0ED;
+$table-color-hover: #A3C4D8;
+
+.new-topic {
+  float: right;
+  margin-top: -40px;
+  border: 2px solid #0a0;
+  border-radius: 10px;
+  font-size: 12pt;
+  background-color: white;
+  padding: 4px 10px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0px 2px 5px #ccc;
+}
+
+.new-topic:hover {
+  background-color: #afa;
+}
+
+.new-topic:active {
+  margin-top: -39px;
+  box-shadow: 0px 1px 5px #ccc;
+}
+
+.topic-table {
+  width: 100%;
+  border-spacing: 3px 1px;
+
+  tr.topic-title {
+    height: 35px;
+    cursor: pointer;
+
+    &:hover td {
+      background-color: $table-color-hover;
+    }
+
+    td:first-child {
+      padding-left: 32px;
+      background-image: url(star.svg);
+      background-repeat: no-repeat;
+      background-size: 26px;
+      background-position: 2px center;
+      width: 24px;
+      max-width: 24px;
+      text-align: center;
+    }
+    td:nth-child(2) {
+      padding-left: 32px;
+      background-image: url(comment.svg);
+      background-repeat: no-repeat;
+      background-size: 26px;
+      background-position: 2px center;
+      width: 24px;
+      max-width: 24px;
+      text-align: center;
+    }
+    td:last-child {
+      width: 35px;
+
+      background-image: url(arrow-right.svg);
+      background-repeat: no-repeat;
+      background-size: 26px;
+      background-position: center;
+      padding: 0;
+
+      a {
+        display: block;
+        text-decoration: none;
+        font-size: 0;
+        height: 35px;
+        width: 100%;
+      }
+    }
+
+    td {
+      background-color: $table-color;
+      // border-radius: 3px;
+      padding: 5px 10px;
+      margin: 5px;
+      font-size: 14pt;
+    }
+  }
+
+  tr.topic-detail > td > div {
+    border-left: 2px solid $table-color-hover;
+    border-right: 2px solid $table-color-hover;
+    height: 0px;
+    overflow: hidden;
+    padding: 0px 10px;
+    font-family: $serif-font;
+    font-weight: 300;
+    font-size: 11pt;
+    transition: height 0.4s, padding 0.4s;
+  }
+
+  tr.topic-detail.active > td > div {
+    height: 110px;
+    padding: 5px 10px;
+  }
+
+  .topic-detail > td > div > a {
+    float: right;
+  }
+
+  .topic-detail-desc {
+    height: 85px;
+  }
+}

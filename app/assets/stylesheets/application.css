@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'globals.scss'
+
+.flash {
+  text-align: center;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px 30px;
+}
+
+.flash-notice {
+  background-color: #4ADC4A;
+  border: 2px dashed #0a0;
+}
+
+#flashes-container {
+  margin: 30px 0px;
+}
