@@ -5,6 +5,8 @@ class Idea < ActiveRecord::Base
 
   validates :title, uniqueness: true
 
+  # TODO Put this on the user?
+  # Makes for more readable expressions like `user.like(idea)`
   def like(user)
     likes.create(user: user)
   end
