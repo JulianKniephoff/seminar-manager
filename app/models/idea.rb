@@ -4,7 +4,7 @@ class Idea < ActiveRecord::Base
   has_many :likes, inverse_of: :idea
 
   validates :title,
-            uniqueness: true,
+            uniqueness: { case_sensitive: false },
             presence: true
 
   # TODO Put this on the user?
