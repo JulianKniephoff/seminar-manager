@@ -61,6 +61,20 @@ $table-color-hover: #A3C4D8;
             max-width: 24px;
             text-align: center;
         }
+        td:last-child {
+            width: 35px;
+
+            background-image: url(arrow-right.svg);
+            background-repeat: no-repeat;
+            background-size: 26px;
+            background-position: center;
+            padding: 0;
+
+            a {
+                display: block;
+                text-decoration: none;
+            }
+        }
 
         td {
             background-color: $table-color;

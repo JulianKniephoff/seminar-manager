@@ -7,16 +7,14 @@
 <table class="topic-table">
   <tbody>
     <% @ideas.each do |idea| %>
-      <tr class="topic-title" onclick="toggleTopicDetails('topic-detail-<%= idea.id %>')">
+      <tr id="topic-title-<%= idea.id %>" class="topic-title">
         <td><%= idea.likes.count %></td>
         <td><%= idea.comments.count %></td>
         <td><%= idea.title %></td>
-        <!-- <td><%= link_to 'Show', idea %></td> -->
-        <!-- <td><%= link_to 'Edit', edit_idea_path(idea) %></td> -->
-        <!-- <td><%# link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td><%= link_to "\u00a0", idea %></td>
       </tr>
       <tr id="topic-detail-<%= idea.id %>" class="topic-detail">
-        <td colspan="3">
+        <td colspan="4">
           <div>
             <div class="topic-detail-desc">
               <%= idea.description %>
