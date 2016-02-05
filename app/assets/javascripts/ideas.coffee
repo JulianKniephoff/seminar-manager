@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 @toggleTopicDetails = (id) ->
+  # reset all classes (remove `active`)
+  for elem in document.getElementsByClassName("topic-detail active")
+    elem.className = "topic-detail";
   toggleClass(id, "active")
 
 
