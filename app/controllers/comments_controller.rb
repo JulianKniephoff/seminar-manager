@@ -34,9 +34,10 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1
   def destroy
+    @topic = @comment.topic
     @comment.destroy
     # TODO Redirect to where we came from
-    redirect_to comments_url, notice: 'Ihr Kommentar wurde erfolgreich gelöscht.'
+    redirect_to topic_path(@topic), notice: 'Ihr Kommentar wurde erfolgreich gelöscht.'
   end
 
   private
