@@ -3,7 +3,9 @@ class Idea < ActiveRecord::Base
   has_many :comments
   has_many :likes, inverse_of: :idea
 
-  validates :title, uniqueness: true
+  validates :title,
+            uniqueness: true,
+            presence: true
 
   # TODO Put this on the user?
   # Makes for more readable expressions like `user.like(idea)`
