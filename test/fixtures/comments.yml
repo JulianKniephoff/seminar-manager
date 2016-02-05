@@ -2,10 +2,10 @@
 
 one:
   author_id: 
-  idea_id: 
+  topic_id: 
   content: MyText
 
 two:
   author_id: 
-  idea_id: 
+  topic_id: 
   content: MyText

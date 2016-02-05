@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131141950) do
+ActiveRecord::Schema.define(version: 20160205161253) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "provider"
@@ -23,16 +23,26 @@ ActiveRecord::Schema.define(version: 20160131141950) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "author_id"
-    t.integer  "idea_id"
+    t.integer  "topic_id"
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "comments", ["author_id"], name: "index_comments_on_author_id"
-  add_index "comments", ["idea_id"], name: "index_comments_on_idea_id"
+  add_index "comments", ["topic_id"], name: "index_comments_on_topic_id"
 
-  create_table "ideas", force: :cascade do |t|
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "likes", ["topic_id"], name: "index_likes_on_topic_id"
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
+  create_table "topics", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
@@ -40,17 +50,7 @@ ActiveRecord::Schema.define(version: 20160131141950) do
     t.integer  "author_id"
   end
 
-  add_index "ideas", ["author_id"], name: "index_ideas_on_author_id"
-
-  create_table "likes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "idea_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "likes", ["idea_id"], name: "index_likes_on_idea_id"
-  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+  add_index "topics", ["author_id"], name: "index_topics_on_author_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

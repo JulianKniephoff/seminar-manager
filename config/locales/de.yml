@@ -5,8 +5,8 @@ de:
     invalid_credentials: "Der Benutzername oder das Passwort ist falsch"
   unauthorized:
     create:
-      idea: 'Sie müssen angemeldet sein, um neue Ideen anzulegen.'
+      topic: 'Sie müssen angemeldet sein, um neue Themen anzulegen.'
     edit:
-      idea: 'Sie dürfen nur Ihre eigenen Ideen bearbeiten.'
+      topic: 'Sie dürfen nur Ihre eigenen Themen bearbeiten.'
     delete:
-      idea: 'Sie dürfen nur Ihre eigenen Ideen löschen.'
+      topic: 'Sie dürfen nur Ihre eigenen Themen löschen.'
