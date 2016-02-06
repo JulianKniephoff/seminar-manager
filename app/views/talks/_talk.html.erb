@@ -1,8 +1,8 @@
 <tr>
-  <td><%= talk.date %></td>
-  <td><%= talk.speaker.name %></td>
+  <td><%= talk.date.strftime('%d.%m') %></td>
+  <td><%= talk.speaker.present? ? talk.speaker.name : 'TBA' %></td>
   <td>
-    <h4><%= talk.title %></h4>
+    <h4><%= talk.title || 'TBA' %></h4>
     <%= talk.description %>
     <%= link_to 'Details', talk_path(talk) %>
   </td>

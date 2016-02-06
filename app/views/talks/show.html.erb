@@ -2,7 +2,7 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @talk.title %>
+  <%= @talk.title || 'TBA' %>
 </p>
 
 <p>
@@ -12,13 +12,17 @@
 
 <p>
   <strong>Speaker:</strong>
-  <%= @talk.speaker.name %>
+  <%= @talk.speaker.present? ? @talk.speaker.name : 'TBA' %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @talk.date %>
+  <%= @talk.date.strftime('%d.%m') %>
 </p>
 
-<%= link_to 'Edit', edit_talk_path(@talk) %> |
-<%= link_to 'Back', talks_path %>
+<h3>Basiert auf folgenden Ideen</h3>
+<ul>
+  <% @talk.topics.each do |topic| %>
+    <li><%= link_to topic.title, topic_path(topic) %></li>
+  <% end %>
+</ul>
