@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import 'globals.scss'
+@import 'globals.scss';
 
 .flash {
   text-align: center;
