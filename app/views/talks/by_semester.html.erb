@@ -2,13 +2,6 @@
 
 <table>
   <% @talks.each do |talk| %>
-    <tr>
-      <td><%= talk.date %></td>
-      <td>
-        <h4><%= talk.title %></h4>
-        <%= talk.description %>
-        <%= link_to 'Details', talk_path(talk) %>
-      </td>
-    </tr>
+    <%= render talk %>
   <% end %>
 </table>
