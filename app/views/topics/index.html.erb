@@ -5,7 +5,7 @@
 <%= link_to 'Thema hinzufügen', new_topic_path, class: 'new-topic'%>
 <br style="clear: right" />
 <% if @topics.empty? %>
-  <i>Noch keine Themen eingetragen</i>
+  <span class="note">Noch keine Themen eingetragen</span>
 <% end %>
 <table class="topic-table">
   <tbody>
