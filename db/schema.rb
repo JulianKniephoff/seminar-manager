@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206142916) do
+ActiveRecord::Schema.define(version: 20160206151519) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "provider"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20160206142916) do
   end
 
   add_index "talks", ["speaker_id"], name: "index_talks_on_speaker_id"
+
+  create_table "talks_topics", id: false, force: :cascade do |t|
+    t.integer "talk_id",  null: false
+    t.integer "topic_id", null: false
+  end
+
+  add_index "talks_topics", ["talk_id", "topic_id"], name: "index_talks_topics_on_talk_id_and_topic_id"
+  add_index "talks_topics", ["topic_id", "talk_id"], name: "index_talks_topics_on_topic_id_and_talk_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "title"

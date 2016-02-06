@@ -6,6 +6,8 @@ class Topic < ActiveRecord::Base
   has_many :likes,
            inverse_of: :topic
 
+  has_and_belongs_to_many :talks
+
   validates :title,
             uniqueness: { case_sensitive: false },
             presence: true
