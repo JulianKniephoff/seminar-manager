@@ -28,6 +28,13 @@
   border: 2px dashed #0a0;
 }
 
+.flash-alert {
+  background-color: #DB4040;
+  border: 2px dashed black;
+  color: white;
+  font-weight: 500;
+}
+
 #flashes-container {
   margin: 20px 0px;
 }
