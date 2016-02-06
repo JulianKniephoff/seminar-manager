@@ -1,1 +1,13 @@
-<h2>Vorträge im <%= semester(@year, @term) %></h2>
+<h2>Vorträge im <%= @semester %></h2>
+
+<table>
+  <% @talks.each do |talk| %>
+    <tr>
+      <td><%= talk.date %></td>
+      <td>
+        <h4><%= talk.title %></h4>
+        <%= talk.description %>
+      </td>
+    </tr>
+  <% end %>
+</table>

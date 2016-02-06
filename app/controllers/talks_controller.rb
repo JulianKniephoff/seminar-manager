@@ -66,9 +66,8 @@ class TalksController < ApplicationController
   end
 
   def by_semester
-    @year = params[:year].to_i
-    @term = params[:term].to_i
-    @talks = Talk.by_semester(@year, @term)
+    @semester = Semester.new(params[:year].to_i, params[:term].to_i)
+    @talks = Talk.by_semester(@semester)
   end
 
   private
