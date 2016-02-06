@@ -61,10 +61,12 @@ class TalksController < ApplicationController
     end
   end
 
+  # GET /talks/archived
   def archived
     @talks = Talk.archived
   end
 
+  # GET /talks/by-semester/2016/1
   def by_semester
     @semester = Semester.new(params[:year].to_i, params[:term].to_i)
     @talks = Talk.by_semester(@semester)
