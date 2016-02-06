@@ -6,6 +6,8 @@ class Topic < ActiveRecord::Base
   validates :title,
             uniqueness: { case_sensitive: false },
             presence: true
+  validates :description,
+            presence: true
 
   # TODO Put this on the user?
   # Makes for more readable expressions like `user.like(topic)`
