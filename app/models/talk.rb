@@ -3,4 +3,7 @@ class Talk < ActiveRecord::Base
              class_name: 'User'
 
   has_and_belongs_to_many :topics
+
+  validates :date,
+            uniqueness: true
 end
