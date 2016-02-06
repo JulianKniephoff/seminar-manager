@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:index, :create, :destroy], shallow: true
   end
 
+  resources :talks
+
   # Authentication
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   #get '/auth/failure', to: 'sessions#failure'
