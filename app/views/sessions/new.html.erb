@@ -12,6 +12,7 @@
   <%= text_field_tag :username, params[:username] %> <%# TODO This should not be necessary %>
   <%= label_tag :password, 'Passwort' %>
   <%= password_field_tag :password %>
+  <%= hidden_field :origin, params[:origin] %>
   <%= submit_tag 'Anmelden' %>
 <% end %>
 
@@ -22,6 +23,7 @@
     <%= text_field_tag :name %>
     <%= label_tag :email, 'E-Mail' %>
     <%= text_field_tag :email %>
+    <%= hidden_field_tag :origin, params[:origin] %>
     <%= submit_tag 'Anmelden' %>
   <% end %>
 <% end %>

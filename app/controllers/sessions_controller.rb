@@ -28,15 +28,13 @@ class SessionsController < ApplicationController
 
     # TODO What if we were already logged in?
 
-    # TODO Redirect to where we came from
-    redirect_to root_path, notice: 'Sie haben sich erfolgreich angemeldet.'
+    redirect_to origin, notice: 'Sie haben sich erfolgreich angemeldet.'
   end
 
   def destroy
     self.current_user = nil
 
-    # TODO Redirect to where we came from
-    redirect_to root_path, notice: 'Sie wurden erfolgreich abgemeldet.'
+    redirect_to origin, notice: 'Sie wurden erfolgreich abgemeldet.'
   end
 
   def failure
@@ -44,4 +42,10 @@ class SessionsController < ApplicationController
     @message = t(env['omniauth.error.type'], scope: :omniauth)
     render :new
   end
+
+  private
+
+    def origin
+      params[:origin]
+    end
 end

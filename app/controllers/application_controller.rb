@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
 
   # TODO This does also not belong here
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to login_url, alert: exception.message
+    redirect_to login_path(origin: request.original_url), alert: exception.message
   end
 end
