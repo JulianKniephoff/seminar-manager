@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:index, :create, :destroy], shallow: true
   end
 
-  resources :talks do
+  resources :talks, except: [:index, :new, :edit, :create, :destroy] do
     get 'archived', on: :collection
   end
   get '/talks/by-semester/:year/:term' => 'talks#by_semester', as: :talks_by_semester
