@@ -189,8 +189,9 @@ hr.sep {
   text-align: right;
 }
 
-$comment-bg: #D3F2DE;
-$comment-dark-color: darken($comment-bg, 30%);
+$comment-base-color: #D3F2DE;
+$comment-bg: hsl(0, 0, 98%);
+$comment-dark-color: darken($comment-base-color, 30%);
 
 .comment {
   position: relative;
@@ -215,6 +216,37 @@ $comment-dark-color: darken($comment-bg, 30%);
     .comment-body {
       border: 1px solid $comment-dark-color;
       padding: 10px;
+      // clear: both;
+
+      textarea {
+        width: 100%;
+        height: 100px;
+        border-radius: 8px;
+        padding: 10px;
+        box-sizing: border-box;
+        resize: vertical;
+        font-family: $sans-font;
+        font-size: 12pt;
+      }
+
+      .actions {
+        text-align: right;
+
+        input[type="submit"] {
+          background-color: lighten($comment-dark-color, 10%);
+          border-radius: 8px;
+          padding: 7px 10px;
+          border: 1px solid hsl(0, 0, 66%);
+          margin: 5px 0px;
+          font-family: $sans-font;
+          font-size: 12pt;
+
+          &:hover {
+            background-color: $comment-dark-color;
+            border-color: hsl(0, 0, 30%);
+          }
+        }
+      }
     }
 
     .comment-meta {
@@ -248,4 +280,17 @@ $comment-dark-color: darken($comment-bg, 30%);
     }
   }
 
+}
+
+hr.comment-sep {
+  margin-left: 90px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  border-top: 1px solid hsl(0, 0, 80);
+}
+
+.comment-note {
+  font-style: italic;
+  margin-left: 90px;
 }
