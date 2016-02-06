@@ -13,4 +13,8 @@ class Talk < ActiveRecord::Base
     term_start = Date.new(year, 4, 1) >> (term - 1) * 6
     where date: (term_start...(term_start >> 6))
   end
+
+  def self.archived
+    where 'date < ?', Date.today
+  end
 end
