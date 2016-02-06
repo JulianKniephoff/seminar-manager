@@ -10,7 +10,7 @@
   <%= @topic.description %>
 </p>
 
-<% if current_user.likes?(@topic) %>
+<% if signed_in? && current_user.likes?(@topic) %>
   <%# TODO Is there a cleaner way to get the like? %>
   <%= button_to '-1', current_user.like(@topic), method: :delete %>
 <% else %>
