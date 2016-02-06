@@ -64,11 +64,16 @@ $table-color-hover: #A3C4D8;
     td:last-child {
       width: 35px;
 
+      background-color: #6CEDB7;
       background-image: url(arrow-right.svg);
       background-repeat: no-repeat;
       background-size: 26px;
       background-position: center;
       padding: 0;
+
+      &:hover {
+        background-color: darken(#6CEDB7, 20%);
+      }
 
       a {
         display: block;
