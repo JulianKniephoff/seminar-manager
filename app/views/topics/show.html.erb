@@ -2,9 +2,12 @@
   <strong><%= @topic.likes.count %></strong>
   <% if signed_in? && current_user.likes?(@topic) %>
     <%# TODO Is there a cleaner way to get the like? %>
-    <%= button_to '-1', current_user.like(@topic), method: :delete, class: :active %>
+    <%= button_to '-1', current_user.like(@topic),
+      method: :delete,
+      class: :active,
+      title: 'Stern entfernen' %>
   <% else %>
-    <%= button_to '+1', topic_likes_path(@topic) %>
+    <%= button_to '+1', topic_likes_path(@topic), title: 'Stern geben' %>
   <% end %>
 </div>
 <h6 class="topic-headline">Thema</h6>
