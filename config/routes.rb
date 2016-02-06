@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :likes, only: [:index, :create, :destroy], shallow: true
   end
 
-  resources :talks
+  resources :talks do
+    get 'archived', on: :collection
+  end
+  get '/talks/by-semester/:year/:term' => 'talks#by_semester', as: :talks_by_semester
 
   # Authentication
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

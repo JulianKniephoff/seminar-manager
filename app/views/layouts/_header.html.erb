@@ -16,9 +16,9 @@
       <ul>
         <%# TODO Can we DRY this up some? %>
         <li><%= link_to 'Start', root_path, class: current_page?(root_path) ? 'active' : '' %></li>
-        <li><a href="#">Aktuell (SS16)</a></li>
+        <li><%= link_to 'Aktuell (SS16)', talks_by_semester_path(2016, 1), class: current_page?(talks_by_semester_path(2016, 1)) ? 'active' : '' %></li>
         <li><%= link_to 'Themen', topics_path, class: current_controller?(:topics) ? 'active' : '' %></li>
-        <li><a href="#">Archiv</a></li>
+        <li><%= link_to 'Archiv', archived_talks_path, class: current_page?(archived_talks_path) ? 'active' : '' %></li>
       </ul>
     </nav>
   </div>

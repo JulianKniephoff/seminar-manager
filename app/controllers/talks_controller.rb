@@ -61,6 +61,16 @@ class TalksController < ApplicationController
     end
   end
 
+  def archived
+    @talks = Talk.archived
+  end
+
+  def by_semester
+    @year = params[:year].to_i
+    @term = params[:term].to_i
+    @talks = Talk.by_semester(@year, @term)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_talk
