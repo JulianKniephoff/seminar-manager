@@ -17,4 +17,8 @@ class Talk < ActiveRecord::Base
   def self.archived
     where 'date < ?', Date.today
   end
+
+  def semester
+    Semester.new(date)
+  end
 end

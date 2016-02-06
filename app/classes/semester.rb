@@ -1,4 +1,6 @@
 class Semester
+  include Comparable
+
   # Term identifiers
   SUMMER = 1
   WINTER = 2
@@ -17,6 +19,10 @@ class Semester
 
     self.year = year
     self.term = term
+  end
+
+  def <=>(other)
+    [year, term] <=> [other.year, other.term]
   end
 
   def to_s

@@ -1,1 +1,18 @@
 <h2>Archiv</h2>
+
+<% @talks.group_by(&:semester).sort.reverse.each do |semester, talks| %>
+  <h3><%= semester %></h3>
+
+  <table>
+    <% talks.each do |talk| %>
+      <tr>
+        <td><%= talk.date %></td>
+        <td>
+          <h4><%= talk.title %></h4>
+          <%= talk.description %>
+          <%= link_to 'Details', talk_path(talk) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
