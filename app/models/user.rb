@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :likes
 
+  has_many :talks, foreign_key: :speaker_id
+
   # TODO Should this live here or in Topic?
   # TODO Also the naming is confusing, considering Topic#like ...
   def like(topic)
