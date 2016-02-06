@@ -188,3 +188,64 @@ hr.sep {
   font-size: 11pt;
   text-align: right;
 }
+
+$comment-bg: #D3F2DE;
+$comment-dark-color: darken($comment-bg, 30%);
+
+.comment {
+  position: relative;
+  clear: left;
+  padding-left: 90px;
+  margin-right: 90px;
+  margin: 15px 0;
+
+  .comment-avatar {
+    width: 64px;
+    margin-left: -90px;
+    float: left;
+
+    img {
+      // border-radius: 5px;
+    }
+  }
+
+  .comment-main {
+    background-color: $comment-bg;
+
+    .comment-body {
+      border: 1px solid $comment-dark-color;
+      padding: 10px;
+    }
+
+    .comment-meta {
+      background-color: $comment-dark-color;
+      padding: 10px 13px;
+      height: 20px;
+      vertical-align: middle;
+      font-size: 10pt;
+
+      strong {
+        font-size: 12pt;
+      }
+
+      .action-box {
+        float: right;
+      }
+    }
+
+    &::before {
+      $arrow-size: 10px;
+
+      content: " ";
+      position: absolute;
+      top: (40 - 2 * $arrow-size ) / 2;
+      left: 90px -  $arrow-size;
+      height: 0;
+      width: 0;
+      border-top: $arrow-size solid transparent;
+      border-bottom: $arrow-size solid transparent;
+      border-right: $arrow-size solid $comment-dark-color;
+    }
+  }
+
+}

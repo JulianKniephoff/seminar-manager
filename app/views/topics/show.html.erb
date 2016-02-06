@@ -32,16 +32,30 @@
 </div>
 <hr class="sep" />
 
-<table>
-  <% @topic.comments.each do |comment| %>
-    <tr>
-      <td><%= comment.author.name %></td>
-      <td><%= comment.content %></td>
-      <td><%= link_to 'Bearbeiten', edit_comment_path(comment) %></td>
-      <td><%= link_to 'Löschen', comment, method: :delete, data: { confirm: 'Sind Sie sicher?' } %></td>
-    </tr>
-  <% end %>
-</table>
+<% @topic.comments.each do |comment| %>
+  <div class="comment">
+      <div class="comment-avatar">
+        <img src="http://api.adorable.io/avatars/64/<%= comment.author.email %>.png" />
+      </div>
+      <div class="comment-main">
+        <div class="comment-meta">
+          <div class="action-box">
+            <% if can? :update, comment %>
+              <%= link_to 'Bearbeiten', edit_comment_path(comment) %>
+            <% end %>
+            <% if can? :destroy, comment %>
+              <%= link_to 'Löschen', comment, method: :delete, data: { confirm: 'Sind Sie sicher?' } %>
+            <% end %>
+          </div>
+          <strong><%= comment.author.name %></strong>
+          <%= comment.created_at.strftime('am %d.%m.%y um %H:%M') %>
+        </div>
+        <div class="comment-body">
+          <%= comment.content %>
+        </div>
+      </div>
+  </div>
+<% end %>
 
 <%= render 'comments/form' %>
 
