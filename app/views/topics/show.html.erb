@@ -1,22 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="star-container">
+  <strong><%= @topic.likes.count %></strong>
+  <% if signed_in? && current_user.likes?(@topic) %>
+    <%# TODO Is there a cleaner way to get the like? %>
+    <%= button_to '-1', current_user.like(@topic), method: :delete, class: :active %>
+  <% else %>
+    <%= button_to '+1', topic_likes_path(@topic) %>
+  <% end %>
+</div>
+<h6 class="topic-headline">Thema</h6>
+<h1 class="topic-headline"><%= @topic.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+<p class="text-body">
   <%= @topic.description %>
 </p>
 
-<% if signed_in? && current_user.likes?(@topic) %>
-  <%# TODO Is there a cleaner way to get the like? %>
-  <%= button_to '-1', current_user.like(@topic), method: :delete %>
-<% else %>
-  <%= button_to '+1', topic_likes_path(@topic) %>
-<% end %>
-<%= @topic.likes.count %>
+<hr class="sep" />
 
 <table>
   <% @topic.comments.each do |comment| %>
