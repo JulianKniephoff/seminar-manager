@@ -14,9 +14,10 @@
     </div>
     <nav>
       <ul>
-        <li><%= link_to 'Start', root_path, class: 'active' %></li>
+        <%# TODO Can we DRY this up some? %>
+        <li><%= link_to 'Start', root_path, class: current_page?(root_path) ? 'active' : '' %></li>
         <li><a href="#">Aktuell (SS16)</a></li>
-        <li><%= link_to 'Themen', topics_path %></li>
+        <li><%= link_to 'Themen', topics_path, class: current_controller?(:topics) ? 'active' : '' %></li>
         <li><a href="#">Archiv</a></li>
       </ul>
     </nav>
