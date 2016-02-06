@@ -18,7 +18,16 @@
 </p>
 
 <div class="topic-meta">
-  <%= @topic.author.name %>
+  vorgeschlagen von <strong><%= @topic.author.name %></strong>
+  <% if can?(:destroy, @topic) || can?(:update, @topic) %>
+    <br />
+    <% if can? :update, @topic %>
+      <%= link_to 'Edit', edit_topic_path(@topic) %> |
+    <% end %>
+    <% if can? :destroy, @topic %>
+      <%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
 </div>
 <hr class="sep" />
 
@@ -34,6 +43,4 @@
 </table>
 <%= link_to 'Kommentar hinzufügen', new_topic_comment_path(@topic) %>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', topics_path %>
