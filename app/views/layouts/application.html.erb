@@ -11,15 +11,18 @@
 
 <main>
   <div class="site-frame">
-    <section id="flashes-container">
-      <% flash.each do |type, message| %>
-        <%= content_tag :div, message, class: "flash flash-#{type}"%>
-      <% end %>
-    </section>
-
-    <%= yield %>
+    <% unless flash.empty? %>
+      <section id="flashes-container">
+        <% flash.each do |type, message| %>
+          <%= content_tag :div, message, class: "flash flash-#{type}"%>
+        <% end %>
+      </section>
+    <% end %>
+    <div class="content">
+      <%= yield %>
+    </div>
   </div>
-<main>
+</main>
 
 </body>
 </html>

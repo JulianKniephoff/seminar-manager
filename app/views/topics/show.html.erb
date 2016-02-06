@@ -1,22 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="star-container">
+  <strong><%= @topic.likes.count %></strong>
+  <% if signed_in? && current_user.likes?(@topic) %>
+    <%# TODO Is there a cleaner way to get the like? %>
+    <%= button_to '-1', current_user.like(@topic),
+      method: :delete,
+      class: :active,
+      title: 'Stern entfernen' %>
+  <% else %>
+    <%= button_to '+1', topic_likes_path(@topic), title: 'Stern geben' %>
+  <% end %>
+</div>
+<h6 class="topic-headline">Thema</h6>
+<h1 class="topic-headline"><%= @topic.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+<p class="text-body">
   <%= @topic.description %>
 </p>
 
-<% if signed_in? && current_user.likes?(@topic) %>
-  <%# TODO Is there a cleaner way to get the like? %>
-  <%= button_to '-1', current_user.like(@topic), method: :delete %>
-<% else %>
-  <%= button_to '+1', topic_likes_path(@topic) %>
-<% end %>
-<%= @topic.likes.count %>
+<div class="topic-meta">
+  vorgeschlagen von <strong><%= @topic.author.name %></strong>
+  <% if can?(:destroy, @topic) || can?(:update, @topic) %>
+    <br />
+    <% if can? :update, @topic %>
+      <%= link_to 'Edit', edit_topic_path(@topic) %> |
+    <% end %>
+    <% if can? :destroy, @topic %>
+      <%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+</div>
+<hr class="sep" />
 
 <table>
   <% @topic.comments.each do |comment| %>
@@ -31,5 +44,4 @@
 
 <%= render 'comments/form' %>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
