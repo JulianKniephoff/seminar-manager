@@ -5,6 +5,7 @@ class Talk < ActiveRecord::Base
   has_and_belongs_to_many :topics
 
   validates :date,
+            presence: true,
             uniqueness: true
 
   def self.by_semester(semester)
