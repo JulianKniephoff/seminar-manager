@@ -4,6 +4,9 @@
 
 <%= link_to 'Thema hinzufügen', new_topic_path, class: 'new-topic'%>
 <br style="clear: right" />
+<% if @topics.empty? %>
+  <i>Noch keine Themen eingetragen</i>
+<% end %>
 <table class="topic-table">
   <tbody>
     <% @topics.each do |topic| %>
