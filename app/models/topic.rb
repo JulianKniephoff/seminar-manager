@@ -1,7 +1,10 @@
 class Topic < ActiveRecord::Base
-  belongs_to :author, class_name: 'User'
+  belongs_to :author,
+             class_name: 'User'
+
   has_many :comments
-  has_many :likes, inverse_of: :topic
+  has_many :likes,
+           inverse_of: :topic
 
   validates :title,
             uniqueness: { case_sensitive: false },
