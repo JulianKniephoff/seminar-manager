@@ -7,6 +7,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/1
   def show
+    @comment = Comment.new
   end
 
   # GET /topics/new

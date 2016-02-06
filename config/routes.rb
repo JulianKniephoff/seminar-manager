@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
 
   resources :topics do
-    resources :comments, shallow: true
+    resources :comments, except: :new, shallow: true
     resources :likes, only: [:index, :create, :destroy], shallow: true
   end
 

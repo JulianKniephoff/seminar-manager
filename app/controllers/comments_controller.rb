@@ -3,10 +3,6 @@ class CommentsController < ApplicationController
   load_resource :topic
   load_and_authorize_resource :comment, through: :topic, shallow: true
 
-  # GET /topics/1/comments/new
-  def new
-  end
-
   # GET /comments/1/edit
   def edit
   end
@@ -19,7 +15,10 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @topic, notice: 'Ihr Kommentar wurde erfolgreich hinzugefügt.'
     else
-      render :new
+      # TODO This is ugly
+      # Rather exclude the new comment from rendering in the view using `new_record?`?
+      @topic.comments.delete(@comment)
+      render 'topics/show'
     end
   end
 
