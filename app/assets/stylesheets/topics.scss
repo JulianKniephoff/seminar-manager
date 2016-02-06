@@ -227,6 +227,7 @@ $comment-dark-color: darken($comment-base-color, 30%);
         resize: vertical;
         font-family: $sans-font;
         font-size: 12pt;
+        border: 1px solid hsl(0, 0, 66%);
       }
 
       .actions {
