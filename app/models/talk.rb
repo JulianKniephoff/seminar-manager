@@ -6,4 +6,11 @@ class Talk < ActiveRecord::Base
 
   validates :date,
             uniqueness: true
+
+  def self.by_semester(year, term)
+    # TODO Take time zones into account?
+    # TODO Is this always true?
+    term_start = Date.new(year, 4, 1) >> (term - 1) * 6
+    where date: (term_start...(term_start >> 6))
+  end
 end
