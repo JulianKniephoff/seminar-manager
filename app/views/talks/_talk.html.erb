@@ -1,9 +1,16 @@
-<tr>
+<tr id="talk-title-<%= talk.id %>" class="talk-title">
   <td><%= talk.date.strftime('%d.%m') %></td>
   <td><%= talk.speaker.present? ? talk.speaker.name : 'TBA' %></td>
-  <td>
-    <h4><%= talk.title || 'TBA' %></h4>
-    <%= talk.description %>
-    <%= link_to 'Details', talk_path(talk) %>
+  <td><%= talk.title || 'TBA' %></td>
+  <td><%= link_to 'Mehr Details', talk %></td>
+</tr>
+<tr id="talk-detail-<%= talk.id %>" class="talk-detail">
+  <td colspan="4">
+    <div>
+      <div class="talk-detail-desc">
+        <%= talk.description %>
+      </div>
+      <%= link_to 'Details >>', talk %>
+    </div>
   </td>
 </tr>

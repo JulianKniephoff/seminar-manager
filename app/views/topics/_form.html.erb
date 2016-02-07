@@ -11,15 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="topic-form">
+    <div class="field">
+      <%= f.text_field :title, :placeholder => "Prägnanter Titel des Themas" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :description, :placeholder => "Interessante Beschreibung des Themas" %>
+    </div>
+    <div class="actions">
+      <span>Markdown wird unterstützt</span>
+      <%= f.submit %>
+    </div>
+    <br style="clear: both" />
   </div>
 <% end %>

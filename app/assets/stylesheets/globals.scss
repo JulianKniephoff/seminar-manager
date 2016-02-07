@@ -1,2 +1,40 @@
 $serif-font: "Merriweather";
 $sans-font: "Raleway";
+
+$table-color: #CBE0ED;
+$table-color-hover: #A3C4D8;
+
+@mixin button($border-color, $border-highlight) {
+  border: 1px solid $border-color;
+  background: none;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  font-size: 11pt;
+  font-family: $sans-font;
+  text-align: center;
+  display: block;
+  color: black;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 0;
+  box-sizing: content-box;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    border-color: $border-highlight;
+  }
+
+  &:active {
+    margin-top: 1px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: none;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}

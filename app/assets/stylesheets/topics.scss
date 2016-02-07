@@ -4,29 +4,21 @@
 
 @import 'globals.scss';
 
-$table-color: #CBE0ED;
-$table-color-hover: #A3C4D8;
-
 .new-topic {
+  @include button(#9c9, #0b0);
+
   float: right;
-  margin-top: -40px;
-  border: 2px solid #0a0;
-  border-radius: 10px;
-  font-size: 12pt;
-  background-color: white;
-  padding: 4px 10px;
-  text-decoration: none;
-  color: black;
-  box-shadow: 0px 2px 5px #ccc;
-}
+  margin-top: 5px;
+  // width: 150px;
+  color: #040;
 
-.new-topic:hover {
-  background-color: #afa;
-}
+  &:hover {
+    color: #060;
+  }
 
-.new-topic:active {
-  margin-top: -39px;
-  box-shadow: 0px 1px 5px #ccc;
+  &:active {
+    margin-top: 6px;
+  }
 }
 
 .topic-table {
@@ -216,7 +208,6 @@ $comment-dark-color: darken($comment-base-color, 30%);
     .comment-body {
       border: 1px solid $comment-dark-color;
       padding: 10px;
-      // clear: both;
 
       textarea {
         width: 100%;
@@ -228,23 +219,30 @@ $comment-dark-color: darken($comment-base-color, 30%);
         font-family: $sans-font;
         font-size: 12pt;
         border: 1px solid hsl(0, 0, 66%);
+        outline: none;
+
+        &:focus {
+          box-shadow: 0 0 0 1px hsl(0, 0, 50%);
+        }
       }
 
       .actions {
         text-align: right;
 
         input[type="submit"] {
+          @include button(hsl(0, 0, 66%), hsl(0, 0, 33%));
+
+          display: inline-block;
           background-color: lighten($comment-dark-color, 10%);
           border-radius: 8px;
-          padding: 7px 10px;
-          border: 1px solid hsl(0, 0, 66%);
           margin: 5px 0px;
-          font-family: $sans-font;
-          font-size: 12pt;
 
           &:hover {
             background-color: $comment-dark-color;
-            border-color: hsl(0, 0, 30%);
+          }
+          &:active {
+            margin-top: 6px;
+            margin-bottom: 4px;
           }
         }
       }
@@ -294,4 +292,33 @@ hr.comment-sep {
 .comment-note {
   font-style: italic;
   margin-left: 90px;
+}
+
+.topic-form {
+  input[type="text"] {
+    width: 100%;
+
+    padding: 6px 8px;
+    margin: 10px 0;
+    font-size: 15pt;
+    font-weight: 700;
+    font-family: $sans-font;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 17px;
+    font-family: $serif-font;
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  input[type="submit"] {
+    @include button(#ccc, #555);
+    float: right;
+  }
 }

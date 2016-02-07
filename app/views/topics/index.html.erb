@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Themen</h1>
-
 <%= link_to 'Thema hinzufügen', new_topic_path, class: 'new-topic'%>
+<h1>Themen</h1>
 <br style="clear: right" />
 <% if @topics.empty? %>
   <div class="note">Noch keine Themen eingetragen</div>

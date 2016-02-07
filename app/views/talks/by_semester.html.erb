@@ -1,10 +1,14 @@
-<h2>Vorträge im <%= @semester %></h2>
+<button class="show-all-button" id="show-all-talks">Alle ausklappen</button>
+<h1>Vorträge im <%= @semester %></h1>
+<br style="clear: right" />
 
 <% if @talks.empty? %>
   <div class="note">Noch keine Vorträge eingetragen</div>
 <% end %>
-<table>
-  <% @talks.each do |talk| %>
-    <%= render talk %>
-  <% end %>
+<table class="talk-table">
+  <tbody>
+    <% @talks.each do |talk| %>
+      <%= render talk %>
+    <% end %>
+  </tbody>
 </table>
