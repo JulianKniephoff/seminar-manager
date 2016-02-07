@@ -1,5 +1,8 @@
 <h2>Vorträge im <%= @semester %></h2>
 
+<% if @talks.empty? %>
+  <div class="note">Noch keine Vorträge eingetragen</div>
+<% end %>
 <table>
   <% @talks.each do |talk| %>
     <%= render talk %>
