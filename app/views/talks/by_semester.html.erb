@@ -3,8 +3,10 @@
 <% if @talks.empty? %>
   <div class="note">Noch keine Vorträge eingetragen</div>
 <% end %>
-<table>
-  <% @talks.each do |talk| %>
-    <%= render talk %>
-  <% end %>
+<table class="talk-table">
+  <tbody>
+    <% @talks.each do |talk| %>
+      <%= render talk %>
+    <% end %>
+  </tbody>
 </table>

@@ -8,15 +8,6 @@
     elem.className = "topic-detail" if elem.id != id
   toggleClass(id, "active")
 
-
-toggleClass = (id, cssClass) ->
-  obj = document.getElementById(id)
-  regex = new RegExp("(?:^|\\s)" + cssClass +  "(?!\\S)", "g")
-  if (obj.className.match(regex))
-    obj.className = obj.className.replace(regex , '')
-  else
-    obj.className += " " + cssClass
-
 @topicReady = ->
   for tr in document.getElementsByClassName("topic-title")
     detailId = tr.id;

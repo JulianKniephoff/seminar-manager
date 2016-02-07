@@ -1,3 +1,82 @@
 // Place all the styles related to the talks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'globals.scss';
+
+
+.talk-table {
+  width: 100%;
+  border-spacing: 3px 1px;
+
+  tr.talk-title {
+    height: 35px;
+    cursor: pointer;
+
+    &:hover td {
+      background-color: $table-color-hover;
+    }
+
+    td:first-child {
+      width: 30px;
+    }
+    td:nth-child(2) {
+      width: 100px;
+    }
+    td:last-child {
+      width: 35px;
+
+      background-color: #6CEDB7;
+      background-image: url(arrow-right.svg);
+      background-repeat: no-repeat;
+      background-size: 26px;
+      background-position: center;
+      padding: 0;
+
+      &:hover {
+        background-color: darken(#6CEDB7, 20%);
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        font-size: 0;
+        height: 35px;
+        width: 100%;
+      }
+    }
+
+    td {
+      background-color: $table-color;
+      // border-radius: 3px;
+      padding: 5px 10px;
+      margin: 5px;
+      font-size: 14pt;
+    }
+  }
+
+  tr.talk-detail > td > div {
+    border-left: 2px solid $table-color-hover;
+    border-right: 2px solid $table-color-hover;
+    height: 0px;
+    overflow: hidden;
+    padding: 0px 10px;
+    font-family: $serif-font;
+    font-weight: 300;
+    font-size: 11pt;
+    transition: height 0.4s, padding 0.4s;
+  }
+
+  tr.talk-detail.active > td > div {
+    height: 110px;
+    padding: 5px 10px;
+  }
+
+  .talk-detail > td > div > a {
+    float: right;
+  }
+
+  .talk-detail-desc {
+    height: 85px;
+  }
+}
