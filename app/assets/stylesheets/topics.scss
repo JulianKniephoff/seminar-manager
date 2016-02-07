@@ -230,17 +230,19 @@ $comment-dark-color: darken($comment-base-color, 30%);
         text-align: right;
 
         input[type="submit"] {
+          @include button(hsl(0, 0, 66%), hsl(0, 0, 33%));
+
+          display: inline-block;
           background-color: lighten($comment-dark-color, 10%);
           border-radius: 8px;
-          padding: 7px 10px;
-          border: 1px solid hsl(0, 0, 66%);
           margin: 5px 0px;
-          font-family: $sans-font;
-          font-size: 12pt;
 
           &:hover {
             background-color: $comment-dark-color;
-            border-color: hsl(0, 0, 30%);
+          }
+          &:active {
+            margin-top: 6px;
+            margin-bottom: 4px;
           }
         }
       }
