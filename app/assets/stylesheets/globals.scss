@@ -45,10 +45,6 @@ a:hover {
 }
 
 @mixin markdown {
-  line-height: 24px;
-  p {
-  }
-
   blockquote {
     border-left: 4px solid #999;
     margin-left: 0px;

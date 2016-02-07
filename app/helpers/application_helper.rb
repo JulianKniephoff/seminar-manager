@@ -6,6 +6,11 @@ module ApplicationHelper
   def markdown(text)
     @markdown_renderer ||= Redcarpet::Markdown.new(
       MarkdownRenderer
+      no_intra_emphasis: true,
+      fenced_code_block: true,
+      autolink: true,
+      strikethrough: true,
+      underline: true
     )
     @markdown_renderer.render(text).html_safe
   end

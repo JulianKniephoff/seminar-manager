@@ -84,6 +84,8 @@ main {
 }
 
 .text-body {
+  @include markdown();
+
   margin: 3px 10px;
   font-size: 17px;
   font-family: $serif-font;

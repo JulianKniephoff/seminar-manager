@@ -208,6 +208,8 @@ $comment-dark-color: darken($comment-base-color, 30%);
     .comment-body {
       @include markdown();
 
+      line-height: 24px;
+
       border: 1px solid $comment-dark-color;
       padding: 10px;
 
@@ -315,6 +317,7 @@ hr.comment-sep {
     padding: 8px;
     font-size: 17px;
     font-family: $serif-font;
+    font-weight: 300;
     resize: vertical;
     min-height: 150px;
   }

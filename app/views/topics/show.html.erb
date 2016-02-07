@@ -13,9 +13,9 @@
 <h6 class="topic-headline">Thema</h6>
 <h1 class="topic-headline"><%= @topic.title %></h1>
 
-<p class="text-body">
-  <%= @topic.description %>
-</p>
+<div class="text-body">
+  <%= markdown @topic.description %>
+</div>
 
 <div class="topic-meta">
   vorgeschlagen von <strong><%= @topic.author.name %></strong>,
