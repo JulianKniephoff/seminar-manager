@@ -1,5 +1,3 @@
-<h1>Anmelden</h1>
-
 <%# TODO Is this idiomatic? %>
 <% if @message %>
   <p>
@@ -7,14 +5,15 @@
   </p>
 <% end %>
 
-<%= form_tag '/auth/ldap/callback' do %>
-  <%= label_tag :username, 'E-Mail' %>
-  <%= text_field_tag :username, params[:username] %> <%# TODO This should not be necessary %>
-  <%= label_tag :password, 'Passwort' %>
-  <%= password_field_tag :password %>
-  <%= hidden_field :origin, params[:origin] %>
-  <%= submit_tag 'Anmelden' %>
-<% end %>
+<div class="login-box">
+  <h1>Login</h1>
+  <%= form_tag '/auth/ldap/callback' do %>
+    <%= text_field_tag :username, params[:username], placeholder: 'RZ-Kennung (xmustermann)' %> <%# TODO This should not be necessary %>
+    <%= password_field_tag :password, "", placeholder: 'Passwort' %>
+    <%= hidden_field :origin, params[:origin] %>
+    <%= submit_tag 'Anmelden' %>
+  <% end %>
+</div>
 
 <% if Rails.env.development? %>
   <h2>Entwickler-Anmeldung</h2>

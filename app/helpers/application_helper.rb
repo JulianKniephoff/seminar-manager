@@ -5,7 +5,7 @@ module ApplicationHelper
 
   def markdown(text)
     @markdown_renderer ||= Redcarpet::Markdown.new(
-      MarkdownRenderer,
+      MarkdownRenderer.new(escape_html: true),
       no_intra_emphasis: true,
       fenced_code_block: true,
       autolink: true,

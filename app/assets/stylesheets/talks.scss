@@ -23,6 +23,10 @@
     td:nth-child(2) {
       width: 100px;
     }
+    td:nth-child(3) {
+      font-size: 15pt;
+      font-weight: 600;
+    }
     td:last-child {
       width: 35px;
 
@@ -63,7 +67,8 @@
     padding: 0px 10px;
     font-family: $serif-font;
     font-weight: 300;
-    font-size: 11pt;
+    line-height: 24px;
+    font-size: 12pt;
     transition: height 0.4s, padding 0.4s;
   }
 
@@ -78,6 +83,15 @@
 
   .talk-detail-desc {
     height: 85px;
+    overflow: hidden;
+
+    p, pre {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
   }
 }
 
