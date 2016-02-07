@@ -15,7 +15,6 @@
   else
     elems = document.getElementsByClassName("talk-detail active")
     for i in [0...elems.length]
-      console.log(elems[0])
       elems[0].className = "talk-detail"
     button.innerHTML = "Alle ausklappen"
 
@@ -30,7 +29,9 @@
           toggleTalkDetails(detailId.replace("title", "detail"))
 
   # attach button handler
-  document.getElementById("show-all-talks").onclick = expandAll
+  showAll = document.getElementById("show-all-talks")
+  if showAll != null
+    showAll.onclick = expandAll
 
 
 
