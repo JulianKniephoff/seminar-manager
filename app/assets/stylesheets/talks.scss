@@ -78,6 +78,15 @@
 
   .talk-detail-desc {
     height: 85px;
+    overflow: hidden;
+
+    p, pre {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
   }
 }
 

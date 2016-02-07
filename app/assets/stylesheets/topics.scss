@@ -113,6 +113,14 @@
   .topic-detail-desc {
     height: 85px;
     overflow: hidden;
+
+    p, pre {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
   }
 }
 
@@ -324,7 +332,7 @@ hr.comment-sep {
     font-family: $serif-font;
     font-weight: 300;
     resize: vertical;
-    min-height: 150px;
+    min-height: 300px;
   }
 
   input[type="submit"] {
