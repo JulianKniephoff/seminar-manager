@@ -293,3 +293,32 @@ hr.comment-sep {
   font-style: italic;
   margin-left: 90px;
 }
+
+.topic-form {
+  input[type="text"] {
+    width: 100%;
+
+    padding: 6px 8px;
+    margin: 10px 0;
+    font-size: 15pt;
+    font-weight: 700;
+    font-family: $sans-font;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 17px;
+    font-family: $serif-font;
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  input[type="submit"] {
+    @include button(#ccc, #555);
+    float: right;
+  }
+}
