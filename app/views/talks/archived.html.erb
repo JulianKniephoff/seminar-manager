@@ -1,4 +1,7 @@
 <h2>Archiv</h2>
+<% if @talks.empty? %>
+  <div class="note">Noch keine archivierten Vorträge</div>
+<% end %>
 
 <% @talks.group_by(&:semester).sort.reverse.each do |semester, talks| %>
   <h3><%= semester %></h3>
