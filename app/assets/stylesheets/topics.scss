@@ -208,7 +208,6 @@ $comment-dark-color: darken($comment-base-color, 30%);
     .comment-body {
       border: 1px solid $comment-dark-color;
       padding: 10px;
-      // clear: both;
 
       textarea {
         width: 100%;
@@ -220,6 +219,11 @@ $comment-dark-color: darken($comment-base-color, 30%);
         font-family: $sans-font;
         font-size: 12pt;
         border: 1px solid hsl(0, 0, 66%);
+        outline: none;
+
+        &:focus {
+          box-shadow: 0 0 0 1px hsl(0, 0, 50%);
+        }
       }
 
       .actions {
