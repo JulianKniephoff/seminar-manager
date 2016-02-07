@@ -52,7 +52,7 @@
         <%= comment.created_at.strftime('am %d.%m.%y um %H:%M') %>
       </div>
       <div class="comment-body">
-        <%= comment.content %>
+        <%= markdown comment.content %>
       </div>
     </div>
   </div>
