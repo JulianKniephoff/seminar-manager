@@ -206,6 +206,8 @@ $comment-dark-color: darken($comment-base-color, 30%);
     background-color: $comment-bg;
 
     .comment-body {
+      @include markdown();
+
       border: 1px solid $comment-dark-color;
       padding: 10px;
 
