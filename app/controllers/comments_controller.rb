@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   def update
     if @comment.update(comment_params)
-      redirect_to @comment, notice: 'Ihr Kommentar wurde erfolgreich aktualisiert.'
+      redirect_to @comment.topic, notice: 'Ihr Kommentar wurde erfolgreich aktualisiert.'
     else
       render :edit
     end
