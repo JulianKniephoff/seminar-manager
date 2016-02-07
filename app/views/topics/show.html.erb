@@ -62,7 +62,7 @@
 <% end %>
 
 <hr class="comment-sep" />
-<% if current_user.present? %>
+<% if signed_in? %>
   <%= render 'comments/form' %>
 <% else %>
   <div class="comment-note">Sie müssen sich anmelden, um kommentieren zu können</div>
