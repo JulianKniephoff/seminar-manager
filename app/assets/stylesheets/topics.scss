@@ -106,8 +106,13 @@
     float: right;
   }
 
+  .topic-detail:last-child.active > td > div {
+    border-bottom: 2px solid $table-color-hover;
+  }
+
   .topic-detail-desc {
     height: 85px;
+    overflow: hidden;
   }
 }
 
@@ -206,6 +211,10 @@ $comment-dark-color: darken($comment-base-color, 30%);
     background-color: $comment-bg;
 
     .comment-body {
+      @include markdown();
+
+      line-height: 24px;
+
       border: 1px solid $comment-dark-color;
       padding: 10px;
 
@@ -313,6 +322,7 @@ hr.comment-sep {
     padding: 8px;
     font-size: 17px;
     font-family: $serif-font;
+    font-weight: 300;
     resize: vertical;
     min-height: 150px;
   }

@@ -1,3 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700,100,200,600,500,800,900);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,700,400italic,900,700italic,900italic&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
 $serif-font: "Merriweather";
 $sans-font: "Raleway";
 
@@ -37,4 +42,40 @@ $table-color-hover: #A3C4D8;
 
 a:hover {
   text-decoration: none;
+}
+
+@mixin markdown {
+  blockquote {
+    border-left: 4px solid #999;
+    margin-left: 0px;
+    padding: 5px 10px;
+    color: #444;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  q::before {
+    content: "„";
+  }
+  q::after {
+    content: "“";
+  }
+
+  // code blocks
+  code {
+
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding: 2px;
+    border-radius: 3px;
+    font-family: "Inconsolata";
+
+    &:only-child {
+      border-radius: 8px;
+      padding: 8px;
+      display: block;
+    }
+  }
 }
