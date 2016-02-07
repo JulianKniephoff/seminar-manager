@@ -11,6 +11,7 @@ module ApplicationHelper
       autolink: true,
       strikethrough: true,
       underline: true
+      quote: true,
     )
     @markdown_renderer.render(text).html_safe
   end
