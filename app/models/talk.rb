@@ -13,6 +13,14 @@ class Talk < ActiveRecord::Base
     where date: (semester.start...(semester.start >> 6))
   end
 
+  def self.current
+    by_semester(Semester.current)
+  end
+
+  def self.before_semester(semester)
+    where 'date < ?', semester.start
+  end
+
   def self.archived
     where 'date < ?', Date.today
   end
