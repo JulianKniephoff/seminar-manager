@@ -1,26 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @talk.title || 'TBA' %>
-</p>
+<h6 class="show-headline">Vortrag</h6>
+<h1 class="show-headline"><%= @talk.title %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @talk.description %>
-</p>
+<div class="talk-metabox">
+  <div style="float: right">
+    am <strong><%= @talk.date.strftime('%d.%m.%y') %></strong>
+  </div>
 
-<p>
-  <strong>Speaker:</strong>
-  <%= @talk.speaker.present? ? @talk.speaker.name : 'TBA' %>
-</p>
+  von <strong><%= @talk.speaker.present? ? @talk.speaker.name : 'TBA' %>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @talk.date.strftime('%d.%m') %>
-</p>
+<div class="text-body">
+  <%= markdown @talk.description %>
+</div>
 
-<h3>Basiert auf folgenden Ideen</h3>
+<hr class="sep" />
+
+<h3>Behandelt folgende Themen:</h3>
 <ul>
   <% @talk.topics.each do |topic| %>
     <li><%= link_to topic.title, topic_path(topic) %></li>

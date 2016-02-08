@@ -11,8 +11,10 @@ class Semester
   def initialize(year_or_date, term = SUMMER)
     # TODO Also make this work with `Time` and other types?
     if year_or_date.kind_of?(Date)
-      year = year_or_date.year
-      term = (4...10).include?(year_or_date.month) ? SUMMER : WINTER
+      month = year_or_date.month
+      term = (4...10).include?(month) ? SUMMER : WINTER
+      # correct base-year in case of WINTER
+      year = year_or_date.year - ((1...4).include?(month) ? 1 : 0)
     else
       year = year_or_date
     end

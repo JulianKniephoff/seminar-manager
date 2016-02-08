@@ -6,7 +6,7 @@
 <% @talks.group_by(&:semester).sort.reverse.each do |semester, talks| %>
   <h3><%= semester %></h3>
 
-  <table>
+  <table class="talk-table">
     <% talks.each do |talk| %>
       <%= render talk %>
     <% end %>

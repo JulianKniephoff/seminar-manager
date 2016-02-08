@@ -10,8 +10,8 @@
     <%= button_to '+1', topic_likes_path(@topic), title: 'Stern geben' %>
   <% end %>
 </div>
-<h6 class="topic-headline">Thema</h6>
-<h1 class="topic-headline"><%= @topic.title %></h1>
+<h6 class="show-headline">Thema</h6>
+<h1 class="show-headline"><%= @topic.title %></h1>
 
 <div class="text-body">
   <%= markdown @topic.description %>

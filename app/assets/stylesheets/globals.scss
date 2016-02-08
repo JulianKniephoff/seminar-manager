@@ -79,3 +79,10 @@ a:hover {
     }
   }
 }
+
+hr.sep {
+  border-top: 1px solid hsl(0, 0, 80);
+  margin: 25px 5%;
+  border-bottom: none;
+  clear: both;
+}
