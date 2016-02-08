@@ -44,6 +44,11 @@ class Semester
     end
   end
 
+  def abbrev
+    abbrevs = { SUMMER => "SS", WINTER => "WS" }
+    "#{abbrevs[term]}#{spanning_years.map { |year| year % 100 }.join('/')}"
+  end
+
   def to_s
     term_names = { SUMMER => 'Sommersemester', WINTER => 'Wintersemester' }
     "#{term_names[term]}\u00a0#{spanning_years.join('/')}"
