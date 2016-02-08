@@ -8,11 +8,9 @@ class Talk < ActiveRecord::Base
             presence: true,
             uniqueness: true
 
+  # TODO Take time zones into account?
   def self.by_semester(semester)
-    # TODO Take time zones into account?
-    # TODO Is this always true?
-    term_start = Date.new(semester.year, 4, 1) >> (semester.term - 1) * 6
-    where date: (term_start...(term_start >> 6))
+    where date: (semester.start...(semester.start >> 6))
   end
 
   def self.archived
