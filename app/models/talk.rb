@@ -22,7 +22,7 @@ class Talk < ActiveRecord::Base
   end
 
   def self.archived
-    where 'date < ?', Date.today
+    before_semester(Semester.current)
   end
 
   def semester
