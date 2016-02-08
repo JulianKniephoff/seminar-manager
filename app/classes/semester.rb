@@ -8,10 +8,6 @@ class Semester
   attr_accessor :year
   attr_accessor :term
 
-  def self.current
-    Semester.new(Date.today)
-  end
-
   def initialize(year_or_date, term = SUMMER)
     # TODO Also make this work with `Time` and other types?
     if year_or_date.kind_of?(Date)

@@ -18,9 +18,9 @@
         <%# TODO Can we DRY this up some? %>
         <li><%= link_to 'Start', root_path, class: current_page?(root_path) ? 'active' : '' %></li>
         <%# TODO Is there a way to get a helper that takes a semester? %>
-        <li><%= link_to "Aktuell (#{current_semester.abbrev})", talks_by_semester_path(current_semester.year, current_semester.term), class: current_page?(talks_by_semester_path(current_semester.year, current_semester.term)) ? 'active' : '' %></li>
+        <li><%= link_to "Aktuell (#{current_semester.abbrev})", current_talks_path, class: current_talks_page? ? 'active' : '' %></li>
         <li><%= link_to 'Themen', topics_path, class: current_controller?(:topics) ? 'active' : '' %></li>
-        <li><%= link_to 'Archiv', archived_talks_path, class: current_page?(archived_talks_path) ? 'active' : '' %></li>
+        <li><%= link_to 'Archiv', archived_talks_path, class: archived_talks_page? ? 'active' : '' %></li>
       </ul>
     </nav>
   </div>

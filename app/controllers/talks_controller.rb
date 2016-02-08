@@ -61,15 +61,16 @@ class TalksController < ApplicationController
     end
   end
 
+  # TODO Should these be their own resources?
+
   # GET /talks/archived
   def archived
-    @talks = Talk.archived
+    @talks = Talk.before_semester(current_semester)
   end
 
-  # GET /talks/by-semester/2016/1
-  def by_semester
-    @semester = Semester.new(params[:year].to_i, params[:term].to_i)
-    @talks = Talk.by_semester(@semester)
+  # GET /talks/current
+  def current
+    @talks = Talk.by_semester(current_semester)
   end
 
   private

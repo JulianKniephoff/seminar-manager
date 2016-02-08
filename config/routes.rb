@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   resources :talks, except: [:index, :new, :edit, :create, :destroy] do
     get 'archived', on: :collection
+    get 'current', on: :collection
   end
-  get '/talks/by-semester/:year/:term' => 'talks#by_semester', as: :talks_by_semester
 
   # Authentication
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
