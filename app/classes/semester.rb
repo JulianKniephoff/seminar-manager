@@ -36,7 +36,16 @@ class Semester
     Date.new(year, 4, 1) >> (term - 1) * 6
   end
 
+  def spanning_years
+    if term == WINTER
+      [year, year + 1]
+    else
+      [year]
+    end
+  end
+
   def to_s
-    "#{['Sommer', 'Winter'][term - 1]}semester #{year}#{"/#{year + 1}" if term == 2}"
+    term_names = { SUMMER => 'Sommersemester', WINTER => 'Wintersemester' }
+    "#{term_names[term]}\u00a0#{spanning_years.join('/')}"
   end
 end
