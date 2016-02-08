@@ -19,6 +19,13 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.nil? ? nil : user.id
   end
 
+  def current_semester
+    # TODO Get this from the database or a configuration file
+    # NOTE That this specifically is not a wrapper for `Semester.current`!
+    @current_semester ||= Semester.new(2016, Semester::SUMMER)
+  end
+  helper_method :current_semester
+
   # TODO This does also not belong here
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to login_path(origin: request.original_url), alert: exception.message
