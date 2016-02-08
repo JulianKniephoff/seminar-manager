@@ -27,6 +27,11 @@ class Semester
     [year, term] <=> [other.year, other.term]
   end
 
+  def start
+    # TODO Is this really always the start of the semester?
+    Date.new(year, 4, 1) >> (term - 1) * 6
+  end
+
   def to_s
     "#{['Sommer', 'Winter'][term - 1]}semester #{year}#{"/#{year + 1}" if term == 2}"
   end
