@@ -6,7 +6,8 @@
       </div>
       <div class="header-user">
         <% if signed_in? %>
-          <%= link_to 'Abmelden', logout_path(origin: request.original_url), method: :delete %>
+          Angemeldet als <strong><%= current_user.name %></strong><br />
+          <%= link_to 'Abmelden', logout_path(origin: request.original_url), class: 'header-logout-button', method: :delete %>
         <% else %>
           <%= button_to 'Login', login_path, class: 'header-login-button', method: :get, params: { origin: request.original_url } %>
         <% end %>
