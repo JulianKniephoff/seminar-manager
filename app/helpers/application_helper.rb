@@ -13,6 +13,6 @@ module ApplicationHelper
       underline: true,
       quote: true,
     )
-    @markdown_renderer.render(text).html_safe
+    @markdown_renderer.render(text.to_s).html_safe
   end
 end
