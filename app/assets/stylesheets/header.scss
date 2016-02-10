@@ -7,8 +7,18 @@ html, body {
   background-color: #fafaff;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-image: url(paper_fibers.png);
+}
+
 body > header {
   background-color: #3282CA;
+  background-image: url(footer_lodyas.png);
   color: white;
 }
 
@@ -27,10 +37,16 @@ body > header {
 }
 
 .header-title {
+  $shadow-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   left: 0;
   font-size: 20pt;
   font-weight: 700;
+  // background-color: $shadow-color;
+  padding: 3px 5px;
+  margin-left: -5px;
+  // box-shadow: 0px 0px 10px 5px $shadow-color;
+  text-shadow: 1px 1px 0px black;
 }
 
 .header-login-button {
@@ -65,27 +81,19 @@ nav li a {
   margin: 0;
 }
 nav li a.active {
-  /*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
-  /*border-bottom: 2px solid white;*/
-  /*padding-bottom: 6px;*/
   background-color: rgba(0,0,0, 0.4);
   font-weight: 600;
-  /*background: rgba(0, 0, 0, 0.15);*/
-  /*background: rgba(255, 200, 255, 0.5);*/
-  /*background: rgba(255, 255, 255, 0.1);*/
-  /*color: black;*/
 }
 
 nav li a:hover {
   background-color: rgba(0,0,0, 0.2);
-  /*border-bottom: 2px solid rgba(255, 255, 255, 0.7);*/
-  /*padding-bottom: 6px;*/
 }
 
 main {
   /*background-color: #eee;*/
   // padding-top: 30px;
   padding-bottom: 100px;
+  // background-image: url(paper_fibers.png);
 }
 
 .text-body {
