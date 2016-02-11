@@ -1,7 +1,11 @@
 <%= form_for(@topic) do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+      <% if @topic.errors.count == 1 %>
+        <h2>Ein Fehler ist aufgetreten:</h2>
+      <% else %>
+        <h2>Einige Fehler sind aufgetreten</h2>
+       <% end %>
 
       <ul>
       <% @topic.errors.full_messages.each do |message| %>

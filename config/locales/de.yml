@@ -1,8 +1,31 @@
 de:
+  helpers:
+    submit:
+      create: '%{model} erstellen'
+      submit: '%{model} speichern'
+      update: '%{model} aktualisieren'
+
+  errors:
+    messages:
+      blank: 'darf nicht leer sein'
+      taken: 'ist schon vergeben'
+
+  activerecord:
+    models:
+      topic: 'Thema'
+    attributes:
+      topic:
+        title: 'Titel'
+        description: 'Beschreibung'
+      comment:
+        content: 'Inhalt'
+
   # TODO Should we break this out
   omniauth: # TODO Call this authentication?
     # TODO Punctuation?
-    invalid_credentials: "Der Benutzername oder das Passwort ist falsch"
+    invalid_credentials: 'Der Benutzername oder das Passwort ist falsch'
+    ldap_error: 'Fehler bei der Anmeldung am LDAP-Server'
+    missing_credentials: 'Benutzername und Passwort fehlen'
   unauthorized:
     create:
       topic: 'Sie müssen angemeldet sein, um neue Themen anzulegen.'

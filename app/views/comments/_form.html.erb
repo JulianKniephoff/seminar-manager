@@ -1,7 +1,11 @@
 <%= form_for [@topic, @comment] do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <% if @comment.errors.count == 1 %>
+        <h2>Ein Fehler ist aufgetreten:</h2>
+      <% else %>
+        <h2>Einige Fehler sind aufgetreten</h2>
+       <% end %>
 
       <ul>
       <% @comment.errors.full_messages.each do |message| %>
