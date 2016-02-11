@@ -1,19 +1,36 @@
 <section>
   <div class="welcome-text">
-    Willkommen zur Seminarverwaltung <i>Neue Konzepte der Informatik</i>! Um zu kommentieren und Themen zu bewerten, müssen Sie sich anmelden.
+    Willkommen zur Seminarverwaltung <i>Neue Konzepte der Informatik</i>!
   </div>
 </section>
 
-<section class="welcome-actions">
-  <button class="welcome-action-button">Vorträge durchstöbern</button>
-  <button class="welcome-action-button">Themen durchstöbern</button>
-</section>
+<hr class="sep" />
 
 <section class="welcome-desc">
-  <h2>Beschreibung<h2>
+  <h2>Seminar-Beschreibung<h2>
   <div class="text-body">
-    <p>Im Seminar „Neue Konzepte der Informatik“ können Studierende ein Informatikthema ihrer Wahl vorstellen. Der Vortrag sollte hauptsächlich lehrreich sein, sodass die Zuhörer einen Einblick in ein spezielles, ihnen wahrscheinlich noch unbekanntes Gebiet bekommen. Neben dem Lehrauftrag sollte der mindestens 60 minütige Vortrag für das Publikum unterhaltsam sein, sodass Interesse für das Thema geweckt wird.</p>
-    <p>Ziel ist es, ein Umfeld zu bieten, in dem motivierte Studenten interessante Vorträge über interessante Themen halten können. So möchten wir über den Lehrplan hinausgehendes Engagement im Bereich der Informatik durch Credits belohnen. Anders als die meisten Seminaren ist dieses Seminar öffentlich; insbesondere passive Teilnehmer sind somit herzlich eingeladen, um interessante und unterhaltsame Vorträge zu hören und sich über das Angebot der Uni hinaus zu bilden.</p>
-    <p> Geplant ist eine mögliche Anrechnung als Informatik Bachelor- und Masterseminar.</p>
+    <p>In diesem Seminar können Studierende ein <b>Informatikthema ihrer Wahl</b> vorstellen. Der Vortrag sollte hauptsächlich lehrreich sein, sodass die Zuhörer einen Einblick in ein spezielles, ihnen wahrscheinlich noch unbekanntes Gebiet bekommen. Neben dem Lehrauftrag sollte der ca. 60-minütige Vortrag für das Publikum unterhaltsam sein, sodass Interesse für das Thema geweckt wird.</p>
+    <p>Ziel ist es, ein Umfeld zu bieten, in dem motivierte Studenten interessante Vorträge über interessante Themen halten können. So möchten wir über den Lehrplan hinausgehendes Engagement im Bereich der Informatik durch Credits belohnen. Anders als die meisten Seminare ist dieses Seminar öffentlich; insbesondere <b>passive Teilnehmer</b> sind somit herzlich eingeladen, interessante und unterhaltsame Vorträge zu hören.</p>
+    <p>Um sich die Art dieses Seminars vorzustellen zu können, kann man teilweise an <a href="https://www.ted.com/">TED</a> oder Science-Slams denken.</p>
   </div>
+  <h2>Interessiert?<h2>
+  <div class="text-body">
+    <p>Als passiver Teilnehmer bist du herzlich eingeladen, eigene Themen vorzuschlagen oder andere zu bewerten, um den Vortragenden zu zeigen, welche Themen beliebt sind. Neben den Informationen in diesem Webtool ist es außerdem ratsam, sich in die <i>Stud.IP</i> Veranstaltung einzutragen, um Benachrichtigungen über bevorstehende Vorträge per Mail zu bekommen.</p>
+    <p>Falls Interesse besteht, selber einen Vortrag zu halten (und somit auch die ECTS zu bekommen), sollte wie folgt vorgegangen werden:</p>
+    <ol>
+      <li>Such dir ein oder mehrere Themen aus, über die du vortragen möchtest. Falls unter den vorhandenen Themen nichts Interessantes dabei ist, schlag selber eins vor.</li>
+      <li>Schreib eine Mail an <a href="mailto:jkniepho@uos.de">Julian</a> oder <a href="mailto:lkalbertodt@uos.de">Lukas</a> und nenne darin die Themen, für die du dich interessierst, als auch, in welchem Studiengang und -semester du bist.
+      <li>Wir werden uns bei dir melden, mit dir das Thema besprechen und entscheiden, ob das Thema für den Vortrag ausreicht und thematisch in das Seminar passt.</li>
+    </ol>
+    <p>Falls sich mehrere Studierende für ein Thema interessieren, versuchen wir, dies zunächst persönlich zu regeln. Falls dabei aber keine Lösung gefunden wird, hat der, der das Thema vorgeschlagen hat, Vorrecht. Ihr könnt daher unbedenklich Themen vorschlagen und braucht keine Angst zu haben, dass euch jemand eure eigene Idee wegschnappt.</p>
+    <p>Man beachte allerdings, dass es in diesem Seminar hauptsächlich um <i>gute</i> Vorträge geht. Das heißt z.B. auch, dass wir nicht automatisch an die ersten, die sich melden, die Themen und Termine vergeben, sondern entscheiden, welche Themen und Vortragende gut in das Seminar passen. Wir planen außerdem, die Vorträge aufzuzeichnen und hochzuladen.</p>
+    <p>Um am Ende die 3 ECTS zu bekommen, ist ein <i>guter</i> Vortrag, eine kurze Ausarbeitung und regelmäßige Anwesenheit nötig.</p>
+  </div>
+</section>
+
+<hr class="sep" />
+
+<section class="welcome-actions">
+  <%= link_to 'Vorträge durchstöbern', current_talks_path, class: 'welcome-button' %>
+  <%= link_to 'Themen durchstöbern', topics_path, class: 'welcome-button' %>
 </section>

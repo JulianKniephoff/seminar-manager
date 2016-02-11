@@ -1,15 +1,11 @@
 @import 'globals.scss';
 
-html, body {
-  margin: 0;
-  font-family: $sans-font;
-  font-weight: normal;
-  background-color: #fafaff;
-}
-
-body > header {
+header {
   background-color: #3282CA;
+  background-image: url(footer_lodyas.png);
   color: white;
+  padding-top: 10px;
+  min-width: 650px;
 }
 
 .site-frame {
@@ -18,7 +14,6 @@ body > header {
   width: 75%;
   margin: 0 auto;
   position: relative;
-  padding-top: 10px;
 }
 
 .header-top {
@@ -27,10 +22,16 @@ body > header {
 }
 
 .header-title {
+  $shadow-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   left: 0;
   font-size: 20pt;
   font-weight: 700;
+  // background-color: $shadow-color;
+  padding: 3px 5px;
+  margin-left: -5px;
+  // box-shadow: 0px 0px 10px 5px $shadow-color;
+  text-shadow: 1px 1px 0px black;
 }
 
 .header-login-button {
@@ -65,87 +66,10 @@ nav li a {
   margin: 0;
 }
 nav li a.active {
-  /*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
-  /*border-bottom: 2px solid white;*/
-  /*padding-bottom: 6px;*/
   background-color: rgba(0,0,0, 0.4);
   font-weight: 600;
-  /*background: rgba(0, 0, 0, 0.15);*/
-  /*background: rgba(255, 200, 255, 0.5);*/
-  /*background: rgba(255, 255, 255, 0.1);*/
-  /*color: black;*/
 }
 
 nav li a:hover {
   background-color: rgba(0,0,0, 0.2);
-  /*border-bottom: 2px solid rgba(255, 255, 255, 0.7);*/
-  /*padding-bottom: 6px;*/
-}
-
-main {
-  /*background-color: #eee;*/
-  // padding-top: 30px;
-  padding-bottom: 100px;
-}
-
-.text-body {
-  @include markdown();
-
-  margin: 3px 10px;
-  font-size: 17px;
-  font-family: $serif-font;
-  font-weight: 300;
-  line-height: 28px;
-}
-
-.welcome-text {
-  margin: 5px 10%;
-  font-size: 17px;
-  font-family: $serif-font;
-  font-weight: 300;
-  line-height: 28px;
-}
-
-.welcome-actions {
-  text-align: center;
-  margin: 20px 0px;
-}
-
-.welcome-actions button {
-  background-color: #3282CA;
-  color: white;
-  border: 2px solid #3F4A81;
-  border-radius: 24px;
-  height: 47px;
-  width: 270px;
-  font-size: 14pt;
-  cursor: pointer;
-  margin: 0px 10px;
-}
-
-.welcome-actions button:hover {
-  background: none;
-  color: black;
-  border: 2px dashed #3282CA;
-}
-
-.welcome-actions button:focus {
-  outline:0;
-  background-color: #2262BA;
-}
-
-.welcome-desc {
-  margin-top: 50px;
-}
-
-h1.show-headline {
-  margin-top: 0px;
-  margin-bottom: 15px;
-  font-size: 26pt;
-}
-
-h6.show-headline {
-  margin: 0px;
-  font-weight: 300;
-  font-size: 12pt;
 }

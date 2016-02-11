@@ -9,6 +9,23 @@ $sans-font: "Raleway";
 $table-color: #CBE0ED;
 $table-color-hover: #A3C4D8;
 
+
+html, body {
+  margin: 0;
+  font-family: $sans-font;
+  font-weight: normal;
+  background-color: #fafaff;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-image: url(paper_fibers.png);
+}
+
 @mixin button($border-color, $border-highlight) {
   border: 1px solid $border-color;
   background: none;
@@ -85,4 +102,31 @@ hr.sep {
   margin: 25px 5%;
   border-bottom: none;
   clear: both;
+}
+
+
+main {
+  padding-bottom: 100px;
+}
+
+.text-body {
+  @include markdown();
+
+  margin: 3px 10px;
+  font-size: 17px;
+  font-family: $serif-font;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+h1.show-headline {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-size: 26pt;
+}
+
+h6.show-headline {
+  margin: 0px;
+  font-weight: 300;
+  font-size: 12pt;
 }
