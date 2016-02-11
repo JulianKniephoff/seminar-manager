@@ -1,16 +1,9 @@
-<%# TODO Is this idiomatic? %>
-<% if @message %>
-  <p>
-    <%= @message %>
-  </p>
-<% end %>
-
 <div class="login-box">
   <h1>Login</h1>
   <%= form_tag '/auth/ldap/callback' do %>
     <%= text_field_tag :username, params[:username], placeholder: 'RZ-Kennung (xmustermann)' %> <%# TODO This should not be necessary %>
     <%= password_field_tag :password, "", placeholder: 'Passwort' %>
-    <%= hidden_field :origin, params[:origin] %>
+    <%= hidden_field_tag :origin, params[:origin] %>
     <%= submit_tag 'Anmelden' %>
   <% end %>
 </div>

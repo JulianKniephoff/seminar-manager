@@ -38,8 +38,7 @@ class SessionsController < ApplicationController
   end
 
   def failure
-    # TODO Should we know about the env here?
-    @message = t(env['omniauth.error.type'], scope: :omniauth)
+    flash.now[:alert] = t(env['omniauth.error.type'], scope: :omniauth)
     render :new
   end
 
