@@ -31,6 +31,6 @@
 <hr class="sep" />
 
 <section class="welcome-actions">
-  <%= link_to 'Vorträge durchstöbern', talks_by_semester_path(2016, Semester::SUMMER), class: 'welcome-button' %>
+  <%= link_to 'Vorträge durchstöbern', current_talks_path, class: 'welcome-button' %>
   <%= link_to 'Themen durchstöbern', topics_path, class: 'welcome-button' %>
 </section>
