@@ -1,13 +1,10 @@
 <section>
   <div class="welcome-text">
-    Willkommen zur Seminarverwaltung <i>Neue Konzepte der Informatik</i>! Um zu kommentieren und Themen zu bewerten, ist eine Anmeldung mit RZ-Login nötig.
+    Willkommen zur Seminarverwaltung <i>Neue Konzepte der Informatik</i>!
   </div>
 </section>
 
-<section class="welcome-actions">
-  <button class="welcome-action-button">Vorträge durchstöbern</button>
-  <button class="welcome-action-button">Themen durchstöbern</button>
-</section>
+<hr class="sep" />
 
 <section class="welcome-desc">
   <h2>Seminar-Beschreibung<h2>
@@ -29,4 +26,11 @@
     <p>Man beachte allerdings, dass es in diesem Seminar hauptsächlich um <i>gute</i> Vorträge geht. Das heißt z.B. auch, dass wir nicht automatisch an die ersten, die sich melden, die Themen und Termine vergeben, sondern entscheiden, welche Themen und Vortragende gut in das Seminar passen. Wir planen außerdem, die Vorträge aufzuzeichnen und hochzuladen.</p>
     <p>Um am Ende die 3 ECTS zu bekommen, ist ein <i>guter</i> Vortrag, eine kurze Ausarbeitung und regelmäßige Anwesenheit nötig.</p>
   </div>
+</section>
+
+<hr class="sep" />
+
+<section class="welcome-actions">
+  <%= link_to 'Vorträge durchstöbern', talks_by_semester_path(2016, Semester::SUMMER), class: 'welcome-button' %>
+  <%= link_to 'Themen durchstöbern', topics_path, class: 'welcome-button' %>
 </section>
