@@ -1,8 +1,9 @@
 <%# TODO Is this idiomatic? %>
+
 <% if @message %>
-  <p>
-    <%= @message %>
-  </p>
+  <section id="flashes-container">
+    <%= content_tag :div, @message, class: 'flash flash-alert'%>
+  </section>
 <% end %>
 
 <div class="login-box">
