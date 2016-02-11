@@ -1,9 +1,11 @@
 @import 'globals.scss';
 
-body > header {
+header {
   background-color: #3282CA;
   background-image: url(footer_lodyas.png);
   color: white;
+  padding-top: 10px;
+  min-width: 650px;
 }
 
 .site-frame {
@@ -12,7 +14,6 @@ body > header {
   width: 75%;
   margin: 0 auto;
   position: relative;
-  padding-top: 10px;
 }
 
 .header-top {
