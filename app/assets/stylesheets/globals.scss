@@ -23,7 +23,7 @@ html {
 
 body {
   min-height: 100%;
-  background-image: url(paper_fibers.png);
+  background-image: asset_url('paper_fibers.png');
 }
 
 @mixin button($border-color, $border-highlight) {
