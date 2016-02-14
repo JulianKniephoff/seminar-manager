@@ -2,14 +2,17 @@
 
 <%= link_to 'Thema hinzufügen', new_topic_path, class: 'new-topic'%>
 <h1>Themen</h1>
+<%# TODO Can we use symbols for the column names somehow? %>
+<%# TODO Dry up the classes and params %>
+<div class="sort-box">Sortieren nach
+  <%= link_to 'Datum', topics_path(sort: 'created_at', direction: sort_direction == 'asc' ? 'desc' : 'asc'), class: sort_column == 'created_at' ? "active #{sort_direction == 'asc' ? 'desc' : 'asc'}" : '' %>
+  <%= link_to 'Beliebtheit', topics_path(sort: 'likes_count', direction: sort_direction == 'asc' ? 'desc' : 'asc'), class: sort_column == 'likes_count' ? "active #{sort_direction == 'asc' ? 'desc' : 'asc'}" : '' %>
+</div>
 <br style="clear: right" />
+
 <% if @topics.empty? %>
   <div class="note">Noch keine Themen eingetragen</div>
 <% end %>
-<%# TODO Can we use symbols for the column names somehow? %>
-<%# TODO Dry up the classes and params %>
-<%= link_to 'Datum', topics_path(sort: 'created_at', direction: sort_direction == 'asc' ? 'desc' : 'asc'), class: sort_column == 'created_at' ? "active #{sort_direction == 'asc' ? 'desc' : 'asc'}" : '' %>
-<%= link_to 'Beliebtheit', topics_path(sort: 'likes_count', direction: sort_direction == 'asc' ? 'desc' : 'asc'), class: sort_column == 'likes_count' ? "active #{sort_direction == 'asc' ? 'desc' : 'asc'}" : '' %>
 <table class="topic-table">
   <tbody>
     <% @topics.each do |topic| %>

@@ -327,3 +327,32 @@ hr.comment-sep {
     float: right;
   }
 }
+
+.sort-box {
+  a {
+    @include button(#ccc, #999);
+
+    display: inline;
+    position: relative;
+
+    padding: 3px 12px;
+    margin: 0px 5px;
+
+    &.active {
+      font-weight: 700;
+      border-width: 2px;
+
+      &.asc:after {
+        content: " ▴";
+        vertical-align: baseline;
+        font-size: 16pt;
+      }
+
+      &.desc:after {
+        content: " ▾";
+        vertical-align: baseline;
+        font-size: 16pt;
+      }
+    }
+  }
+}
