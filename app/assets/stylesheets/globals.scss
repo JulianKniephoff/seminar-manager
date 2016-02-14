@@ -81,20 +81,23 @@ a:hover {
   }
 
   // code blocks
-  code {
+  pre > code {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    font-family: "Inconsolata";
+    border-radius: 8px;
+    padding: 8px;
+    display: block;
+    overflow-x: auto;
+  }
 
+  // inline code
+  code {
     background-color: #eee;
     border: 1px solid #aaa;
     padding: 2px;
     border-radius: 3px;
     font-family: "Inconsolata";
-
-    &:only-child {
-      border-radius: 8px;
-      padding: 8px;
-      display: block;
-      overflow-x: auto;
-    }
   }
 }
 
