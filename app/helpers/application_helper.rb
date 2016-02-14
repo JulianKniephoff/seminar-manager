@@ -7,7 +7,7 @@ module ApplicationHelper
     @markdown_renderer ||= Redcarpet::Markdown.new(
       MarkdownRenderer.new(escape_html: true),
       no_intra_emphasis: true,
-      fenced_code_block: true,
+      fenced_code_blocks: true,
       autolink: true,
       strikethrough: true,
       underline: true,

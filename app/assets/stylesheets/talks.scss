@@ -31,7 +31,7 @@
       width: 35px;
 
       background-color: #6CEDB7;
-      background-image: url(arrow-right.svg);
+      background-image: asset_url('arrow-right.svg');
       background-repeat: no-repeat;
       background-size: 26px;
       background-position: center;
@@ -89,7 +89,7 @@
     height: 85px;
     overflow: hidden;
 
-    p, pre {
+    & > * {
       display: none;
 
       &:first-child {
