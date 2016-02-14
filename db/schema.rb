@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206151519) do
+ActiveRecord::Schema.define(version: 20160214224934) do
 
   create_table "authentications", force: :cascade do |t|
     t.string   "provider"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160206151519) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "author_id"
+    t.integer  "likes_count"
   end
 
   add_index "topics", ["author_id"], name: "index_topics_on_author_id"
