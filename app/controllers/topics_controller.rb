@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
 
   # GET /topics
   def index
+    @topics = @topics.order(sort_column => sort_direction)
   end
 
   # GET /topics/1
@@ -49,4 +50,17 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:title, :description)
     end
+
+    # TODO Abstract this out?
+    def sort_column
+      # TODO Naming ...
+      Topic.column_names.include?(params[:sort]) ? params[:sort] : 'created_at'
+    end
+
+    def sort_direction
+      # TODO Abstract out this pattern?
+      %w(asc desc).include?(params[:direction]) ? params[:direction] : 'asc'
+    end
+
+    helper_method :sort_column, :sort_direction
 end
