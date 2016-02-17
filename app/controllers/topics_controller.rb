@@ -59,7 +59,7 @@ class TopicsController < ApplicationController
 
     def sort_direction
       # TODO Abstract out this pattern?
-      %w(asc desc).include?(params[:direction]) ? params[:direction] : 'asc'
+      %w(asc desc).include?(params[:direction]) ? params[:direction] : 'desc'
     end
 
     helper_method :sort_column, :sort_direction
