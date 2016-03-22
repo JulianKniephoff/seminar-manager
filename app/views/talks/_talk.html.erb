@@ -1,7 +1,7 @@
 <tr id="talk-title-<%= talk.id %>" class="talk-title">
   <td><%= talk.date.strftime('%d.%m') %></td>
-  <td><%= talk.speaker.present? ? talk.speaker.name : 'TBA' %></td>
-  <td><%= talk.title || 'TBA' %></td>
+  <td><%= talk.speaker.present? ? talk.speaker.name : '<span class="tba">TBA</span>'.html_safe %></td>
+  <td><%= talk.title || '<span class="tba">TBA</span>'.html_safe %></td>
   <td><%= link_to 'Mehr Details', talk %></td>
 </tr>
 <tr id="talk-detail-<%= talk.id %>" class="talk-detail">
