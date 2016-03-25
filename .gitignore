@@ -21,3 +21,4 @@
 
 # Misc
 .byebug_history
+.env
