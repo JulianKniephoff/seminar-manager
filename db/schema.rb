@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160214224934) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authentications", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160214224934) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "comments", ["author_id"], name: "index_comments_on_author_id"
-  add_index "comments", ["topic_id"], name: "index_comments_on_topic_id"
+  add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
+  add_index "comments", ["topic_id"], name: "index_comments_on_topic_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,8 +42,8 @@ ActiveRecord::Schema.define(version: 20160214224934) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "likes", ["topic_id"], name: "index_likes_on_topic_id"
-  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+  add_index "likes", ["topic_id"], name: "index_likes_on_topic_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "talks", force: :cascade do |t|
     t.string   "title"
@@ -51,15 +54,15 @@ ActiveRecord::Schema.define(version: 20160214224934) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "talks", ["speaker_id"], name: "index_talks_on_speaker_id"
+  add_index "talks", ["speaker_id"], name: "index_talks_on_speaker_id", using: :btree
 
   create_table "talks_topics", id: false, force: :cascade do |t|
     t.integer "talk_id",  null: false
     t.integer "topic_id", null: false
   end
 
-  add_index "talks_topics", ["talk_id", "topic_id"], name: "index_talks_topics_on_talk_id_and_topic_id"
-  add_index "talks_topics", ["topic_id", "talk_id"], name: "index_talks_topics_on_topic_id_and_talk_id"
+  add_index "talks_topics", ["talk_id", "topic_id"], name: "index_talks_topics_on_talk_id_and_topic_id", using: :btree
+  add_index "talks_topics", ["topic_id", "talk_id"], name: "index_talks_topics_on_topic_id_and_talk_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "title"
@@ -70,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160214224934) do
     t.integer  "likes_count"
   end
 
-  add_index "topics", ["author_id"], name: "index_topics_on_author_id"
+  add_index "topics", ["author_id"], name: "index_topics_on_author_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -79,4 +82,10 @@ ActiveRecord::Schema.define(version: 20160214224934) do
     t.string   "email"
   end
 
+  add_foreign_key "comments", "topics"
+  add_foreign_key "comments", "users", column: "author_id"
+  add_foreign_key "likes", "topics"
+  add_foreign_key "likes", "users"
+  add_foreign_key "talks", "users", column: "speaker_id"
+  add_foreign_key "topics", "users", column: "author_id"
 end
