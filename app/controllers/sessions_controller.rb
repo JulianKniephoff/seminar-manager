@@ -26,6 +26,12 @@ class SessionsController < ApplicationController
 
     self.current_user = authentication.user
 
+    # TODO Does this really belong here?
+    if Rails.env.development?
+      # Make user admin and the checkbox was ticked
+      current_user.update(admin: params[:admin].present?)
+    end
+
     # TODO What if we were already logged in?
 
     redirect_to origin, notice: 'Sie haben sich erfolgreich angemeldet.'
