@@ -25,7 +25,8 @@
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%# TODO Translate the months or is there a gem for that? %>
+    <%= f.date_select :date, use_month_numbers: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

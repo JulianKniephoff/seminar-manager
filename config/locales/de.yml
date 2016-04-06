@@ -1,4 +1,6 @@
 de:
+  date:
+    order: [day, month, year]
   helpers:
     submit:
       create: '%{model} erstellen'
