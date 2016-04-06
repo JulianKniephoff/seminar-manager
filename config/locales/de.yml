@@ -20,6 +20,9 @@ de:
       topic:
         title: 'Titel'
         description: 'Beschreibung'
+      talk:
+        title: 'Titel'
+        description: 'Beschreibung'
       comment:
         content: 'Inhalt'
 

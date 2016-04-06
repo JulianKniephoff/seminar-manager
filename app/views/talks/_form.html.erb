@@ -1,7 +1,11 @@
 <%= form_for(@talk) do |f| %>
   <% if @talk.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@talk.errors.count, "error") %> prohibited this talk from being saved:</h2>
+      <% if @talk.errors.count == 1 %>
+        <h2>Ein Fehler ist aufgetreten:</h2>
+      <% else %>
+        <h2>Einige Fehler sind aufgetreten</h2>
+      <% end %>
 
       <ul>
       <% @talk.errors.full_messages.each do |message| %>
