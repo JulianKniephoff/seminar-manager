@@ -2,8 +2,15 @@ class TopicsController < ApplicationController
   load_and_authorize_resource
 
   # GET /topics
+  # GET /topics.json
   def index
+    # TODO Can we make this more portable?
+    @topics = @topics.where('title like ?', "%#{params[:q]}%")
     @topics = @topics.order(sort_column => sort_direction)
+    respond_to do |format|
+      format.html
+      format.json { render json: @topics.to_json }
+    end
   end
 
   # GET /topics/1
