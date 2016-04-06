@@ -15,6 +15,7 @@ de:
   activerecord:
     models:
       topic: 'Thema'
+      talk: 'Vortrag'
     attributes:
       topic:
         title: 'Titel'
