@@ -1,5 +1,7 @@
 <h6 class="show-headline">Vortrag</h6>
-<h1 class="show-headline"><%= @talk.title %></h1>
+<h1 class="show-headline">
+  <%= @talk.title.present? ? @talk.title : '<span class="tba">TBA</span>'.html_safe %>
+</h1>
 
 <div class="talk-metabox">
   <div style="float: right">
@@ -10,7 +12,7 @@
 </div>
 
 <div class="text-body">
-  <%= markdown @talk.description %>
+  <%= markdown(@talk.description.present? ? @talk.description : '*Noch keine Beschreibung*') %>
 </div>
 
 <% if can? :edit, @talk %>

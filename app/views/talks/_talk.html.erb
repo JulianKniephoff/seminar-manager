@@ -1,14 +1,14 @@
 <tr id="talk-title-<%= talk.id %>" class="talk-title">
   <td><%= talk.date.strftime('%d.%m') %></td>
   <td><%= talk.speaker.present? ? talk.speaker.name : '<span class="tba">TBA</span>'.html_safe %></td>
-  <td><%= talk.title || '<span class="tba">TBA</span>'.html_safe %></td>
+  <td><%= talk.title.present? ? talk.title : '<span class="tba">TBA</span>'.html_safe %></td>
   <td><%= link_to 'Mehr Details', talk %></td>
 </tr>
 <tr id="talk-detail-<%= talk.id %>" class="talk-detail">
   <td colspan="4">
     <div>
       <div class="talk-detail-desc">
-        <%= markdown talk.description %>
+        <%= markdown(talk.description.present? ? talk.description : '*Noch keine Beschreibung*') %>
       </div>
       <%= link_to 'Details >>', talk %>
     </div>

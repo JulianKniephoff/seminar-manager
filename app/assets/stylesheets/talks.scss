@@ -13,10 +13,7 @@
     height: 35px;
     cursor: pointer;
 
-    .tba {
-      font-style: italic;
-      color: #666;
-    }
+
 
     &:hover td {
       background-color: $table-color-hover;
@@ -135,4 +132,9 @@
   select {
     padding: 3px 5px;
   }
+}
+
+.tba {
+  font-style: italic;
+  color: #666;
 }
