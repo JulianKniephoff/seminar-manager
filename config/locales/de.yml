@@ -31,5 +31,7 @@ de:
       topic: 'Sie müssen angemeldet sein, um neue Themen anzulegen.'
     edit:
       topic: 'Sie dürfen nur Ihre eigenen Themen bearbeiten.'
+      # TODO Very unspecific ...
+      talk: 'Sie dürfen diesen Vortrag nicht bearbeiten.'
     delete:
       topic: 'Sie dürfen nur Ihre eigenen Themen löschen.'
