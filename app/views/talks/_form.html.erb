@@ -19,11 +19,13 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%# TODO Translate the months or is there a gem for that? %>
-    <%= f.date_select :date, use_month_numbers: true %>
-  </div>
+  <% if current_user.admin? %>
+    <div class="field">
+      <%= f.label :date %><br>
+      <%# TODO Translate the months or is there a gem for that? %>
+      <%= f.date_select :date, use_month_numbers: true %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

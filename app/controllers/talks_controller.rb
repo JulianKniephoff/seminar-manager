@@ -24,14 +24,10 @@ class TalksController < ApplicationController
   # PATCH/PUT /talks/1
   # PATCH/PUT /talks/1.json
   def update
-    respond_to do |format|
-      if @talk.update(talk_params)
-        format.html { redirect_to @talk, notice: 'Talk was successfully updated.' }
-        format.json { render :show, status: :ok, location: @talk }
-      else
-        format.html { render :edit }
-        format.json { render json: @talk.errors, status: :unprocessable_entity }
-      end
+    if @talk.update(talk_params)
+      redirect_to @talk, notice: 'Der Vortrag wurde erfolgreich aktualisiert.'
+    else
+      render :edit
     end
   end
 
@@ -55,6 +51,8 @@ class TalksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def talk_params
-      params.require(:talk).permit(:title, :description, :speaker_id, :date)
+      filters = [:title, :description]
+      filters << :date if current_user.admin?
+      params.require(:talk).permit(*filters)
     end
 end
