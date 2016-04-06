@@ -13,6 +13,12 @@
   <%= markdown @talk.description %>
 </div>
 
+<% if can? :edit, @talk %>
+  <div class="edit-talk">
+    <%= link_to 'Bearbeiten', edit_talk_path(@talk) %>
+  </div>
+<% end %>
+
 <hr class="sep" />
 
 <h3>Behandelt folgende Themen:</h3>
@@ -21,9 +27,3 @@
     <li><%= link_to topic.title, topic_path(topic) %></li>
   <% end %>
 </ul>
-
-<% if can? :edit, @talk %>
-  <p>
-    <%= link_to 'Bearbeiten', edit_talk_path(@talk) %>
-  </p>
-<% end %>

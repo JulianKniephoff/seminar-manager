@@ -15,22 +15,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <% if current_user.admin? %>
+  <div class="topic-form">
     <div class="field">
-      <%= f.label :date %><br>
-      <%# TODO Translate the months or is there a gem for that? %>
-      <%= f.date_select :date, use_month_numbers: true %>
+      <%= f.text_field :title, :placeholder => "Titel des Vortrags"%>
     </div>
-  <% end %>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+      <%= f.text_area :description, :placeholder => "Interessante Beschreibung des Vortrags" %>
+    </div>
+    <% if current_user.admin? %>
+      <div class="field date-select">
+        <%# TODO Translate the months or is there a gem for that? %>
+        Datum: <%= f.date_select :date, use_month_numbers: true %>
+      </div>
+    <% end %>
+    <div class="actions">
+      <span>(Markdown wird unterstützt)</span>
+      <%= f.submit %>
+    </div>
+    <br style="clear: both" />
   </div>
 <% end %>

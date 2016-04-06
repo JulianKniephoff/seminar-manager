@@ -122,3 +122,17 @@
   background-color: #eee;
   padding: 10px;
 }
+
+.edit-talk {
+  text-align: right;
+}
+
+.date-select {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-weight: bold;
+
+  select {
+    padding: 3px 5px;
+  }
+}
