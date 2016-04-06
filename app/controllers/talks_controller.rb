@@ -1,5 +1,5 @@
 class TalksController < ApplicationController
-  before_action :set_talk, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /talks
   # GET /talks.json
@@ -39,12 +39,12 @@ class TalksController < ApplicationController
 
   # GET /talks/archived
   def archived
-    @talks = Talk.before_semester(current_semester).order(date: :asc)
+    @talks = @talks.before_semester(current_semester).order(date: :asc)
   end
 
   # GET /talks/current
   def current
-    @talks = Talk.by_semester(current_semester).order(date: :asc)
+    @talks = @talks.by_semester(current_semester).order(date: :asc)
   end
 
   private

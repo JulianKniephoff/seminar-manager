@@ -23,3 +23,9 @@
     <li><%= link_to topic.title, topic_path(topic) %></li>
   <% end %>
 </ul>
+
+<% if can? :edit, @talk %>
+  <p>
+    <%= link_to 'Bearbeiten', edit_talk_path(@talk) %>
+  </p>
+<% end %>
