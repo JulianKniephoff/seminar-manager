@@ -13,10 +13,7 @@
     height: 35px;
     cursor: pointer;
 
-    .tba {
-      font-style: italic;
-      color: #666;
-    }
+
 
     &:hover td {
       background-color: $table-color-hover;
@@ -78,7 +75,7 @@
   }
 
   tr.talk-detail.active > td > div {
-    height: 110px;
+    height: 155px;
     padding: 5px 10px;
   }
 
@@ -91,7 +88,7 @@
   }
 
   .talk-detail-desc {
-    height: 85px;
+    height: 130px;
     overflow: hidden;
 
     & > * {
@@ -121,4 +118,23 @@
 .talk-metabox {
   background-color: #eee;
   padding: 10px;
+}
+
+.edit-talk {
+  text-align: right;
+}
+
+.date-select {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-weight: bold;
+
+  select {
+    padding: 3px 5px;
+  }
+}
+
+.tba {
+  font-style: italic;
+  color: #666;
 }
