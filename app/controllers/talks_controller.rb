@@ -65,12 +65,12 @@ class TalksController < ApplicationController
 
   # GET /talks/archived
   def archived
-    @talks = Talk.before_semester(current_semester)
+    @talks = Talk.before_semester(current_semester).order(date: :asc)
   end
 
   # GET /talks/current
   def current
-    @talks = Talk.by_semester(current_semester)
+    @talks = Talk.by_semester(current_semester).order(date: :asc)
   end
 
   private
