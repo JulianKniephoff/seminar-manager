@@ -21,22 +21,6 @@ class TalksController < ApplicationController
   def edit
   end
 
-  # POST /talks
-  # POST /talks.json
-  def create
-    @talk = Talk.new(talk_params)
-
-    respond_to do |format|
-      if @talk.save
-        format.html { redirect_to @talk, notice: 'Talk was successfully created.' }
-        format.json { render :show, status: :created, location: @talk }
-      else
-        format.html { render :new }
-        format.json { render json: @talk.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # PATCH/PUT /talks/1
   # PATCH/PUT /talks/1.json
   def update
@@ -48,16 +32,6 @@ class TalksController < ApplicationController
         format.html { render :edit }
         format.json { render json: @talk.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /talks/1
-  # DELETE /talks/1.json
-  def destroy
-    @talk.destroy
-    respond_to do |format|
-      format.html { redirect_to talks_url, notice: 'Talk was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
