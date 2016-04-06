@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:index, :create, :destroy], shallow: true
   end
 
-  resources :talks, except: [:index, :new, :edit, :create, :destroy] do
+  resources :talks, except: [:index, :new, :create, :destroy] do
     get 'archived', on: :collection
     get 'current', on: :collection
   end
