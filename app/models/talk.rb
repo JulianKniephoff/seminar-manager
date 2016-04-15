@@ -4,6 +4,8 @@ class Talk < ActiveRecord::Base
 
   has_and_belongs_to_many :topics
 
+  has_many :materials
+
   validates :date,
             presence: true,
             uniqueness: true
