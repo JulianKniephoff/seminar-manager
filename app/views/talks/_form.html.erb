@@ -34,4 +34,12 @@
     </div>
     <br style="clear: both" />
   </div>
+
+  <h3>Materialien</h3>
+  <%= f.fields_for :materials do |materials_form| %>
+    <div>
+      <%= materials_form.label :description %><br>
+      <%= materials_form.text_field :description %>
+    </div>
+  <% end %>
 <% end %>

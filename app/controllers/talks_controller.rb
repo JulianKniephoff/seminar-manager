@@ -47,7 +47,7 @@ class TalksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def talk_params
-      filters = [:title, :description]
+      filters = [:title, :description, { materials_attributes: [:id, :description] }]
       filters << :date if current_user.admin?
       params.require(:talk).permit(*filters)
     end

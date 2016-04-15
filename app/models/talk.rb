@@ -5,6 +5,7 @@ class Talk < ActiveRecord::Base
   has_and_belongs_to_many :topics
 
   has_many :materials
+  accepts_nested_attributes_for :materials
 
   validates :date,
             presence: true,
