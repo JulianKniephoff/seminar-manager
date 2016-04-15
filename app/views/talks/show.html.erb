@@ -29,3 +29,10 @@
     <li><%= link_to topic.title, topic %></li>
   <% end %>
 </ul>
+
+<h3>Materialien</h3>
+<ul>
+  <% @talk.materials.each do |material| %>
+    <li><%= material.description %></li>
+  <% end %>
+</ul>
