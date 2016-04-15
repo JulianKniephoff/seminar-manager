@@ -26,6 +26,6 @@
 <h3>Behandelt folgende Themen:</h3>
 <ul>
   <% @talk.topics.each do |topic| %>
-    <li><%= link_to topic.title, topic_path(topic) %></li>
+    <li><%= link_to topic.title, topic %></li>
   <% end %>
 </ul>
