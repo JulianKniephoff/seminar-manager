@@ -3,4 +3,5 @@ class Material < ActiveRecord::Base
   do_not_validate_attachment_file_type :file
 
   validates :description, presence: true
+  validates :file, attachment_presence: true
 end
