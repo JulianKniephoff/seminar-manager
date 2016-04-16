@@ -25,6 +25,7 @@ de:
         description: 'Beschreibung'
       talk/materials:
         description: 'Beschreibung des Materials'
+        file: 'Dateipfadangabe des Materials'
       comment:
         content: 'Inhalt'
 
