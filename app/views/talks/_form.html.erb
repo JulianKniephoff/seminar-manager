@@ -42,6 +42,10 @@
       <%= materials_form.text_field :description %>
     </div>
     <div>
+      <%= materials_form.label :file %>
+      <%= materials_form.file_field :file %>
+    </div>
+    <div>
       <%= materials_form.label :_destroy %>
       <%= materials_form.check_box :_destroy %>
     </div>
