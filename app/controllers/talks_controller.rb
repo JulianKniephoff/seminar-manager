@@ -19,6 +19,7 @@ class TalksController < ApplicationController
 
   # GET /talks/1/edit
   def edit
+    @talk.materials.build
   end
 
   # PATCH/PUT /talks/1
