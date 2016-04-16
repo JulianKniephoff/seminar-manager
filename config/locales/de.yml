@@ -23,6 +23,8 @@ de:
       talk:
         title: 'Titel'
         description: 'Beschreibung'
+      talk/materials:
+        description: 'Beschreibung des Materials'
       comment:
         content: 'Inhalt'
 
