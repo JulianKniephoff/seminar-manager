@@ -33,6 +33,6 @@
 <h3>Materialien</h3>
 <ul>
   <% @talk.materials.each do |material| %>
-    <li><%= material.description %></li>
+    <li><%= link_to material.description, material.file.url %></li>
   <% end %>
 </ul>
