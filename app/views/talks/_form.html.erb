@@ -36,7 +36,8 @@
   </div>
 
   <h3>Materialien</h3>
-  <%= f.fields_for :materials do |materials_form| %>
+  <h4>Neues Material</h4>
+  <%= f.fields_for :materials, @talk.materials.select(&:new_record?) do |materials_form| %>
     <div>
       <%= materials_form.label :description %><br>
       <%= materials_form.text_field :description %>
@@ -44,6 +45,17 @@
     <div>
       <%= materials_form.label :file %>
       <%= materials_form.file_field :file %>
+    </div>
+    <div>
+      <%= materials_form.label :_destroy %>
+      <%= materials_form.check_box :_destroy %>
+    </div>
+  <% end %>
+  <h4>Altes Material</h4>
+  <%= f.fields_for :materials, @talk.materials.reject(&:new_record?) do |materials_form| %>
+    <div>
+      <%= materials_form.label :description %><br>
+      <%= materials_form.text_field :description %>
     </div>
     <div>
       <%= materials_form.label :_destroy %>
