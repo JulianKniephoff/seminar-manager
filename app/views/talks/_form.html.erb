@@ -17,10 +17,10 @@
 
   <div class="topic-form">
     <div class="field">
-      <%= f.text_field :title, :placeholder => "Titel des Vortrags"%>
+      <%= f.text_field :title, placeholder: 'Titel des Vortrags' %>
     </div>
     <div class="field">
-      <%= f.text_area :description, :placeholder => "Interessante Beschreibung des Vortrags" %>
+      <%= f.text_area :description, placeholder: 'Interessante Beschreibung des Vortrags' %>
     </div>
     <span>(Markdown wird unterstützt)</span>
 
@@ -28,7 +28,7 @@
       <h4>Datei hinzufügen:</h4>
       <%= f.fields_for :materials, @talk.materials.select(&:new_record?) do |materials_form| %>
         <div>
-          <%= materials_form.text_field :description, :class => "file-desc", :placeholder => "Kurze Beschreibung der Datei (z. B. „Folien ohne Animationen“)" %>
+          <%= materials_form.text_field :description, class: 'file-desc', placeholder: 'Kurze Beschreibung der Datei (z. B. „Folien ohne Animationen“)' %>
         </div>
         <div>
           <span class="file-note">(Datei wird beim Absenden des Formulars hochgeladen)</span>
@@ -43,7 +43,7 @@
             <%= materials_form.label :_destroy %>
             <%= materials_form.check_box :_destroy %>
           </span>
-          <%= materials_form.text_field :description, :class => "file-desc" %>
+          <%= materials_form.text_field :description, class: 'file-desc' %>
         </div>
       <% end %>
     </div>
