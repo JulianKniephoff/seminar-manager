@@ -22,6 +22,33 @@
     <div class="field">
       <%= f.text_area :description, :placeholder => "Interessante Beschreibung des Vortrags" %>
     </div>
+    <span>(Markdown wird unterstützt)</span>
+
+    <div class="file-stuff">
+      <h4>Datei hinzufügen:</h4>
+      <%= f.fields_for :materials, @talk.materials.select(&:new_record?) do |materials_form| %>
+        <div>
+          <%= materials_form.text_field :description, :class => "file-desc", :placeholder => "Kurze Beschreibung der Datei (z. B. „Folien ohne Animationen“)" %>
+        </div>
+        <div>
+          <span class="file-note">(Datei wird beim Absenden des Formulars hochgeladen)</span>
+          <%= materials_form.file_field :file %>
+        </div>
+      <% end %>
+      <h4>Hochgeladene Dateien:</h4>
+      <%= f.fields_for :materials, @talk.materials.reject(&:new_record?) do |materials_form| %>
+        <div class="old-file-container">
+          <%= materials_form.object.file_file_name%>
+          <span class="delete-file-container">
+            <%= materials_form.label :_destroy %>
+            <%= materials_form.check_box :_destroy %>
+          </span>
+          <%= materials_form.text_field :description, :class => "file-desc" %>
+        </div>
+      <% end %>
+    </div>
+
+
     <% if current_user.admin? %>
       <div class="field date-select">
         <%# TODO Translate the months or is there a gem for that? %>
@@ -29,37 +56,9 @@
       </div>
     <% end %>
     <div class="actions">
-      <span>(Markdown wird unterstützt)</span>
       <%= f.submit %>
     </div>
     <br style="clear: both" />
   </div>
 
-  <h3>Materialien</h3>
-  <h4>Neues Material</h4>
-  <%= f.fields_for :materials, @talk.materials.select(&:new_record?) do |materials_form| %>
-    <div>
-      <%= materials_form.label :description %><br>
-      <%= materials_form.text_field :description %>
-    </div>
-    <div>
-      <%= materials_form.label :file %>
-      <%= materials_form.file_field :file %>
-    </div>
-    <div>
-      <%= materials_form.label :_destroy %>
-      <%= materials_form.check_box :_destroy %>
-    </div>
-  <% end %>
-  <h4>Altes Material</h4>
-  <%= f.fields_for :materials, @talk.materials.reject(&:new_record?) do |materials_form| %>
-    <div>
-      <%= materials_form.label :description %><br>
-      <%= materials_form.text_field :description %>
-    </div>
-    <div>
-      <%= materials_form.label :_destroy %>
-      <%= materials_form.check_box :_destroy %>
-    </div>
-  <% end %>
 <% end %>
