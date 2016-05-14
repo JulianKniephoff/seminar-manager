@@ -23,6 +23,12 @@ de:
       talk:
         title: 'Titel'
         description: 'Beschreibung'
+      talk/materials:
+        description: 'Beschreibung des Materials'
+        file: 'Dateipfadangabe des Materials'
+      material:
+        description: 'Beschreibung'
+        _destroy: 'Löschen'
       comment:
         content: 'Inhalt'
 

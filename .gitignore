@@ -16,6 +16,10 @@
 !/log/.keep
 /tmp
 
+# Paperclip uploads
+/public/system/*
+!/public/system/.keep
+
 # Ignore vendored bundles
 /vendor/bundle
 

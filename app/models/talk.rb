@@ -4,6 +4,11 @@ class Talk < ActiveRecord::Base
 
   has_and_belongs_to_many :topics
 
+  has_many :materials
+  accepts_nested_attributes_for :materials,
+                                allow_destroy: true,
+                                reject_if: :all_blank
+
   validates :date,
             presence: true,
             uniqueness: true

@@ -138,3 +138,42 @@
   font-style: italic;
   color: #666;
 }
+
+.topic-form {
+  input[type="text"].file-desc {
+    font-size: 10pt;
+    font-family: $serif-font;
+    font-weight: normal;
+  }
+}
+
+.file-stuff {
+  border-left: 3px solid #aaa;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+
+  .file-note {
+    float: right;
+    font-size: 9pt;
+  }
+
+  h4 {
+    margin: 0px;
+    margin-top: 40px;
+    font-size: 13pt;
+  }
+
+  .old-file-container {
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    margin: 20px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .delete-file-container {
+      float: right;
+    }
+  }
+}
