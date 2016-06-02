@@ -34,7 +34,7 @@ gem 'omniauth-ldap', github: 'JulianKniephoff/omniauth-ldap', branch: 'dynamic-b
 gem 'cancancan', '~> 1.10'
 
 # Markdown
-gem 'redcarpet'
+gem 'kramdown'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

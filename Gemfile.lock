@@ -87,6 +87,7 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.3)
+    kramdown (1.11.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -140,7 +141,6 @@ GEM
     rake (10.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
-    redcarpet (3.3.4)
     rubyntlm (0.5.3)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -187,12 +187,12 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kramdown
   omniauth
   omniauth-ldap!
   paperclip
   pg
   rails (= 4.2.4)
-  redcarpet
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
@@ -201,4 +201,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.1
